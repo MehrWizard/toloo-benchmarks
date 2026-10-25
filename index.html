@@ -5,168 +5,809 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toloo Protocol Benchmarks</title>
     <style>
+        :root {
+            --bg: #0d0d12;
+            --bg-elevated: #14141c;
+            --bg-card: #1a1a24;
+            --border: #2d2d3d;
+            --border-light: #3a3a4f;
+            --text: #f0f0f5;
+            --text-muted: #8a8a9a;
+            --text-dim: #5a5a6a;
+            --gold: #d4a843;
+            --gold-light: #e8c56d;
+            --gold-dim: #8b7330;
+            --green: #22c55e;
+            --green-dim: #16a34a;
+            --amber: #fbbf24;
+            --red: #ef4444;
+            --red-dim: #dc2626;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 48px rgba(0,0,0,0.5);
+            --transition: 200ms ease;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #1a1a2e;
-            background: #f8f9fa;
+            color: var(--text);
+            background: var(--bg);
             min-height: 100vh;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212,168,67,0.08), transparent),
+                radial-gradient(circle at 20% 80%, rgba(168,85,247,0.04), transparent),
+                radial-gradient(circle at 80% 20%, rgba(59,130,246,0.04), transparent);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; border: 2px solid var(--bg); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+        /* Layout */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+        /* Header */
         header {
+            position: relative;
+            padding: 4rem 1.5rem;
             text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            margin-bottom: 2rem;
-            border-radius: 0 0 24px 24px;
+            overflow: hidden;
         }
-        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
-        .meta { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; font-size: 0.9rem; opacity: 0.8; }
-        .meta span { display: flex; align-items: center; gap: 0.4rem; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+
+        header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.5;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--gold) 0%, #b8902e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 24px rgba(212,168,67,0.3);
+        }
+
+        .logo-mark svg { width: 28px; height: 28px; stroke: var(--bg); }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--text) 0%, var(--gold) 50%, var(--text) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0.75rem auto 1.5rem;
+        }
+
+        .meta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.85rem;
+        }
+
+        .meta-label { color: var(--text-dim); }
+        .meta-value { color: var(--text); font-variant-numeric: tabular-nums; font-weight: 500; }
+        .meta-value.gold { color: var(--gold); }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .tab:hover { border-color: var(--gold-dim); color: var(--text); }
+        .tab.active {
+            background: linear-gradient(135deg, var(--gold), #b8902e);
+            border-color: transparent;
+            color: var(--bg);
+            box-shadow: 0 4px 16px rgba(212,168,67,0.3);
+        }
+
+        .tab-panel { display: none; animation: fadeIn 300ms ease; }
+        .tab-panel.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+        /* Cards */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+
         .card {
-            background: white;
-            border-radius: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
             padding: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            border: 1px solid #e8eaed;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-        .card h3 {
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--gold-dim);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
             font-size: 1rem;
             font-weight: 600;
-            color: #1a1a2e;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid #e8eaed;
-        }
-        .bench-row {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f1f3f4;
+            gap: 0.5rem;
         }
-        .bench-row:last-child { border-bottom: none; }
-        .bench-name { font-size: 0.85rem; color: #3c4043; max-width: 60%; }
-        .bench-value { font-variant-numeric: tabular-nums; font-family: 'SF Mono', Monaco, monospace; font-size: 0.9rem; font-weight: 500; }
-        .bench-value.fast { color: #1e8e3e; }
-        .bench-value.medium { color: #f9ab00; }
-        .bench-value.slow { color: #d93025; }
+
         .platform-badge {
-            display: inline-block;
             padding: 0.25rem 0.75rem;
             border-radius: 999px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .platform-linux { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+        .platform-macos { background: rgba(168,85,247,0.15); color: var(--purple); border: 1px solid rgba(168,85,247,0.3); }
+        .platform-windows { background: rgba(59,130,246,0.15); color: var(--blue); border: 1px solid rgba(59,130,246,0.3); }
+
+        /* Bench rows */
+        .bench-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .bench-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 1rem;
+            align-items: center;
+            padding: 0.625rem 0.75rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: var(--radius-sm);
+            transition: background var(--transition);
+        }
+
+        .bench-row:hover { background: rgba(212,168,67,0.05); }
+
+        .bench-name {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .bench-value {
+            font-variant-numeric: tabular-nums;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
             font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .bench-value.fast { color: var(--green); }
+        .bench-value.medium { color: var(--amber); }
+        .bench-value.slow { color: var(--red); }
+
+        .bench-thru { color: var(--gold); font-size: 0.75rem; font-weight: 500; }
+
+        /* Comparison Table */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-elevated);
+            font-weight: 600;
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-size: 0.65rem;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
-        .platform-linux { background: #e8f5e9; color: #1b5e20; }
-        .platform-macos { background: #f3e5f5; color: #6a1b9a; }
-        .platform-windows { background: #e3f2fd; color: #0d47a1; }
-        .throughput { color: #1e8e3e; font-weight: 600; }
-        .note { text-align: center; margin-top: 2rem; color: #5f6368; font-size: 0.85rem; }
-        .legend { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
-        .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #5f6368; }
-        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
-        .legend-dot.fast { background: #1e8e3e; }
-        .legend-dot.medium { background: #f9ab00; }
-        .legend-dot.slow { background: #d93025; }
-        .loading { text-align: center; padding: 3rem; color: #5f6368; }
-        .error { text-align: center; padding: 3rem; color: #d93025; }
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
+
+        tr:last-child td { border-bottom: none; }
+
+        tr:hover td { background: rgba(212,168,67,0.03); }
+
+        td:first-child { font-family: 'JetBrains Mono', 'Fira Code', monospace; color: var(--text-muted); white-space: nowrap; }
+
+        .cell-value { font-variant-numeric: tabular-nums; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-weight: 500; }
+        .cell-value.fast { color: var(--green); }
+        .cell-value.medium { color: var(--amber); }
+        .cell-value.slow { color: var(--red); }
+
+        .cell-delta {
+            font-variant-numeric: tabular-nums;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .cell-delta.improved { color: var(--green); }
+        .cell-delta.regressed { color: var(--red); }
+        .cell-delta.stable { color: var(--text-dim); }
+
+        /* Charts */
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+
+        .chart-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .chart-btn {
+            padding: 0.5rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .chart-btn:hover { border-color: var(--gold-dim); color: var(--text); }
+        .chart-btn.active { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .legend-dot.fast { background: var(--green); }
+        .legend-dot.medium { background: var(--amber); }
+        .legend-dot.slow { background: var(--red); }
+        .legend-dot.throughput { background: var(--gold); }
+
+        /* Loading/Error states */
+        .state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .state svg { width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.5; }
+        .state.error { color: var(--red); }
+        .state.error svg { opacity: 1; }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
             .card-grid { grid-template-columns: 1fr; }
-            .bench-name { max-width: 50%; }
+            .bench-row { grid-template-columns: 1fr auto; gap: 0.5rem; }
+            .bench-thru { display: none; }
+            th, td { padding: 0.5rem; }
+        }
+
+        /* Reduced gold for print */
+        @media print {
+            :root { --gold: #b8902e; }
+            body::before, body::after { display: none; }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <div class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+        </div>
         <h1>Toloo Protocol Benchmarks</h1>
-        <p>Cross-platform performance measurements for the decentralized messaging protocol</p>
-        <div class="meta">
-            <span id="commit">Commit: <code>—</code></span>
-            <span id="branch">Branch: <code>—</code></span>
-            <span id="timestamp">Updated: <code>—</code></span>
+        <p>Cross-platform performance measurements for the decentralized, censorship-resistant messaging protocol</p>
+        <div class="meta-bar">
+            <div class="meta-item"><span class="meta-label">Commit</span><span class="meta-value gold" id="commit">—</span></div>
+            <div class="meta-item"><span class="meta-label">Branch</span><span class="meta-value" id="branch">—</span></div>
+            <div class="meta-item"><span class="meta-label">Updated</span><span class="meta-value" id="timestamp">—</span></div>
+            <div class="meta-item"><span class="meta-label">Platforms</span><span class="meta-value" id="platform-count">—</span></div>
         </div>
     </header>
 
     <div class="container">
-        <div class="legend" aria-label="Performance legend">
-            <div class="legend-item"><span class="legend-dot fast"></span> <span>< 10 µs (Very Fast)</span></div>
-            <div class="legend-item"><span class="legend-dot medium"></span> <span>10–100 µs (Fast)</span></div>
-            <div class="legend-item"><span class="legend-dot slow"></span> <span>> 100 µs (Moderate)</span></div>
+        <div class="tabs" role="tablist" aria-label="Benchmark views">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="comparison">Comparison</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="trends">Trends</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="raw">Raw Data</button>
         </div>
 
-        <div id="results" class="loading">Loading benchmark results…</div>
+        <!-- Overview Tab -->
+        <div class="tab-panel active" role="tabpanel" id="tab-overview">
+            <div class="legend" aria-label="Performance tier legend">
+                <div class="legend-item"><span class="legend-dot fast"></span> <span>< 10 µs — Very Fast</span></div>
+                <div class="legend-item"><span class="legend-dot medium"></span> <span>10–100 µs — Fast</span></div>
+                <div class="legend-item"><span class="legend-dot slow"></span> <span>> 100 µs — Moderate</span></div>
+                <div class="legend-item"><span class="legend-dot throughput"></span> <span>Gold = Throughput (MB/s)</span></div>
+            </div>
+            <div id="overview-grid" class="card-grid"></div>
+        </div>
 
-        <p class="note">
-            Results collected via GitHub Actions on dedicated runners.
-            <a href="https://github.com/irandawn/toloo/actions/workflows/benchmark.yml" target="_blank" rel="noopener">View workflow</a> ·
-            <a href="https://github.com/irandawn/toloo" target="_blank" rel="noopener">Toloo Protocol</a>
-        </p>
+        <!-- Comparison Tab -->
+        <div class="tab-panel" role="tabpanel" id="tab-comparison">
+            <div class="section-header">
+                <h2 class="section-title">Cross-Platform Comparison</h2>
+                <div class="chart-controls">
+                    <button class="chart-btn active" data-metric="mean_ns">Latency (ns)</button>
+                    <button class="chart-btn" data-metric="throughput">Throughput (MB/s)</button>
+                    <button class="chart-btn" data-metric="relative">Relative to Fastest</button>
+                </div>
+            </div>
+            <div class="table-wrap" id="comparison-table"></div>
+            <div class="chart-container" id="comparison-chart" aria-label="Performance comparison chart"></div>
+        </div>
+
+        <!-- Trends Tab -->
+        <div class="tab-panel" role="tabpanel" id="tab-trends">
+            <div class="section-header">
+                <h2 class="section-title">Historical Trends</h2>
+            </div>
+            <div class="chart-container" id="trends-chart" aria-label="Historical trends chart"></div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">Trends appear after 2+ benchmark runs on the same branch.</p>
+        </div>
+
+        <!-- Raw Data Tab -->
+        <div class="tab-panel" role="tabpanel" id="tab-raw">
+            <div class="section-header">
+                <h2 class="section-title">Raw JSON Data</h2>
+                <button class="chart-btn" onclick="downloadJSON()">Download Current</button>
+                <button class="chart-btn" onclick="copyJSON()">Copy to Clipboard</button>
+            </div>
+            <pre id="raw-json" style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; overflow: auto; font-size: 0.7rem; line-height: 1.5; max-height: 500px; color: var(--text-muted);"></pre>
+        </div>
     </div>
 
+    <footer>
+        <p>Data collected via <a href="https://github.com/MehrWizard/toloo/actions/workflows/benchmark.yml" target="_blank" rel="noopener">GitHub Actions</a> · <a href="https://github.com/MehrWizard/toloo" target="_blank" rel="noopener">Toloo Protocol</a> · <a href="https://github.com/MehrWizard/toloo-benchmarks" target="_blank" rel="noopener">Benchmark Repo</a></p>
+    </footer>
+
     <script>
-        async function loadResults() {
-            try {
-                const res = await fetch('results/latest.json');
-                if (!res.ok) throw new Error('Failed to load');
-                const data = await res.json();
-                render(data);
-            } catch (e) {
-                document.getElementById('results').innerHTML = `
-                    <div class="error">Failed to load benchmarks: ${e.message}</div>
-                `;
-            }
-        }
+        // ══════════════════════════════════════════════════════════════════
+        // Chart.js minimal subset (inline, no external deps)
+        // ══════════════════════════════════════════════════════════════════
+        const Chart = (function() {
+            const ctx = (c) => c.getContext('2d');
+            const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+            const lerp = (a, b, t) => a + (b - a) * t;
 
-        function render(data) {
-            document.getElementById('commit').innerHTML = `Commit: <code>${data.commit.slice(0,8)}</code>`;
-            document.getElementById('branch').innerHTML = `Branch: <code>${data.branch}</code>`;
-            document.getElementById('timestamp').innerHTML = `Updated: <code>${new Date(data.timestamp).toLocaleString()}</code>`;
+            function drawBarChart(canvas, data, options = {}) {
+                const c = ctx(canvas);
+                const { width, height } = canvas;
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                c.scale(dpr, dpr);
 
-            const container = document.getElementById('results');
-            container.innerHTML = '';
+                const padding = { top: 20, right: 20, bottom: 40, left: 60 };
+                const plotW = width - padding.left - padding.right;
+                const plotH = height - padding.top - padding.bottom;
 
-            for (const [platform, benches] of Object.entries(data.platforms)) {
-                const card = document.createElement('div');
-                card.className = 'card';
-                const platformClass = platform.includes('linux') ? 'platform-linux' :
-                                    platform.includes('macos') ? 'platform-macos' :
-                                    platform.includes('windows') ? 'platform-windows' : '';
+                const labels = data.labels;
+                const datasets = data.datasets;
+                const maxVal = Math.max(...datasets.flatMap(d => d.data));
+                const minVal = Math.min(0, ...datasets.flatMap(d => d.data));
 
-                let rows = '';
-                for (const [name, metrics] of Object.entries(benches)) {
-                    const ns = metrics.mean_ns;
-                    let cls = 'fast';
-                    if (ns >= 100000) cls = 'slow';
-                    else if (ns >= 10000) cls = 'medium';
+                // Background
+                c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-card').trim();
+                c.fillRect(0, 0, width, height);
 
-                    let display = `${ns.toLocaleString()} ns`;
-                    if (name.startsWith('canonical/encode')) {
-                        const mb = (1000000 / ns).toFixed(1);
-                        display += ` (${mb} MB/s)`;
-                    }
+                // Grid lines
+                c.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+                c.lineWidth = 1;
+                const gridLines = 5;
+                for (let i = 0; i <= gridLines; i++) {
+                    const y = padding.top + (plotH / gridLines) * i;
+                    c.beginPath();
+                    c.moveTo(padding.left, y);
+                    c.lineTo(width - padding.right, y);
+                    c.stroke();
 
-                    rows += `<div class="bench-row">
-                        <span class="bench-name">${escapeHtml(name)}</span>
-                        <span class="bench-value ${cls}">${display}</span>
-                    </div>`;
+                    // Y-axis labels
+                    const val = maxVal - (maxVal - minVal) * (i / gridLines);
+                    c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-dim').trim();
+                    c.font = '10px "JetBrains Mono", monospace';
+                    c.textAlign = 'right';
+                    c.textBaseline = 'middle';
+                    c.fillText(formatNumber(val), padding.left - 8, y);
                 }
 
-                card.innerHTML = `
-                    <h3><span class="platform-badge ${platformClass}">${platform}</span></h3>
-                    ${rows}
-                `;
-                container.appendChild(card);
+                // Y axis
+                c.beginPath();
+                c.moveTo(padding.left, padding.top);
+                c.lineTo(padding.left, height - padding.bottom);
+                c.stroke();
+
+                // Bars
+                const barCount = datasets.length;
+                const barGroupW = plotW / labels.length;
+                const barW = barGroupW * 0.7 / barCount;
+                const gap = barGroupW * 0.3 / (barCount + 1);
+
+                datasets.forEach((ds, di) => {
+                    c.fillStyle = ds.backgroundColor || 'rgba(212,168,67,0.8)';
+                    ds.data.forEach((val, i) => {
+                        const x = padding.left + i * barGroupW + gap + di * (barW + gap / (barCount - 1 || 1));
+                        const h = (val - minVal) / (maxVal - minVal) * plotH;
+                        const y = height - padding.bottom - h;
+                        c.fillRect(x, y, barW, h);
+                    });
+                });
+
+                // X-axis labels
+                c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim();
+                c.font = '10px "JetBrains Mono", monospace';
+                c.textAlign = 'center';
+                c.textBaseline = 'top';
+                labels.forEach((label, i) => {
+                    const x = padding.left + (i + 0.5) * barGroupW;
+                    c.fillText(label, x, height - padding.bottom + 8);
+                });
+
+                // Legend
+                if (options.legend !== false) {
+                    let lx = width - padding.right - 120;
+                    let ly = padding.top;
+                    datasets.forEach((ds, i) => {
+                        c.fillStyle = ds.backgroundColor || 'rgba(212,168,67,0.8)';
+                        c.fillRect(lx, ly + i * 18, 12, 12);
+                        c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
+                        c.font = '11px Inter, sans-serif';
+                        c.textAlign = 'left';
+                        c.textBaseline = 'middle';
+                        c.fillText(ds.label, lx + 18, ly + i * 18 + 6);
+                    });
+                }
             }
+
+            function drawLineChart(canvas, data, options = {}) {
+                const c = ctx(canvas);
+                const { width, height } = canvas;
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                c.scale(dpr, dpr);
+
+                const padding = { top: 20, right: 20, bottom: 40, left: 60 };
+                const plotW = width - padding.left - padding.right;
+                const plotH = height - padding.top - padding.bottom;
+
+                const labels = data.labels;
+                const datasets = data.datasets;
+
+                let maxVal = -Infinity, minVal = Infinity;
+                datasets.forEach(ds => {
+                    ds.data.forEach(v => {
+                        if (v !== null) { maxVal = Math.max(maxVal, v); minVal = Math.min(minVal, v); }
+                    });
+                });
+                if (maxVal === -Infinity) return;
+                const range = maxVal - minVal || 1;
+
+                // Background
+                c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-card').trim();
+                c.fillRect(0, 0, width, height);
+
+                // Grid
+                c.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+                c.lineWidth = 1;
+                const gridLines = 5;
+                for (let i = 0; i <= gridLines; i++) {
+                    const y = padding.top + (plotH / gridLines) * i;
+                    c.beginPath();
+                    c.moveTo(padding.left, y);
+                    c.lineTo(width - padding.right, y);
+                    c.stroke();
+
+                    const val = maxVal - range * (i / gridLines);
+                    c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-dim').trim();
+                    c.font = '10px "JetBrains Mono", monospace';
+                    c.textAlign = 'right';
+                    c.textBaseline = 'middle';
+                    c.fillText(formatNumber(val), padding.left - 8, y);
+                }
+
+                // Lines
+                datasets.forEach((ds, di) => {
+                    const color = ds.borderColor || `hsl(${di * 60 + 40}, 70%, 55%)`;
+                    c.strokeStyle = color;
+                    c.lineWidth = 2;
+                    c.lineCap = 'round';
+                    c.lineJoin = 'round';
+                    c.beginPath();
+
+                    let first = true;
+                    ds.data.forEach((val, i) => {
+                        if (val === null) return;
+                        const x = padding.left + (i / (labels.length - 1 || 1)) * plotW;
+                        const y = padding.top + plotH - ((val - minVal) / range) * plotH;
+                        if (first) { c.moveTo(x, y); first = false; }
+                        else { c.lineTo(x, y); }
+                    });
+                    c.stroke();
+
+                    // Points
+                    c.fillStyle = color;
+                    ds.data.forEach((val, i) => {
+                        if (val === null) return;
+                        const x = padding.left + (i / (labels.length - 1 || 1)) * plotW;
+                        const y = padding.top + plotH - ((val - minVal) / range) * plotH;
+                        c.beginPath();
+                        c.arc(x, y, 4, 0, Math.PI * 2);
+                        c.fill();
+                    });
+                });
+
+                // X-axis
+                c.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+                c.beginPath();
+                c.moveTo(padding.left, height - padding.bottom);
+                c.lineTo(width - padding.right, height - padding.bottom);
+                c.stroke();
+
+                // X labels
+                c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim();
+                c.font = '10px "JetBrains Mono", monospace';
+                c.textAlign = 'center';
+                c.textBaseline = 'top';
+                labels.forEach((label, i) => {
+                    const x = padding.left + (i / (labels.length - 1 || 1)) * plotW;
+                    c.fillText(label, x, height - padding.bottom + 8);
+                });
+
+                // Legend
+                if (options.legend !== false && datasets.length > 1) {
+                    let lx = padding.left;
+                    let ly = padding.top;
+                    datasets.forEach((ds, i) => {
+                        const color = ds.borderColor || `hsl(${i * 60 + 40}, 70%, 55%)`;
+                        c.fillStyle = color;
+                        c.fillRect(lx, ly + i * 18, 12, 4);
+                        c.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
+                        c.font = '11px Inter, sans-serif';
+                        c.textAlign = 'left';
+                        c.textBaseline = 'middle';
+                        c.fillText(ds.label, lx + 18, ly + i * 18 + 2);
+                    });
+                }
+            }
+
+            function formatNumber(n) {
+                if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
+                if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+                if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+                return n.toFixed(0);
+            }
+
+            return { drawBarChart, drawLineChart };
+        })();
+
+        // ══════════════════════════════════════════════════════════════════
+        // State & Data
+        // ══════════════════════════════════════════════════════════════════
+        let benchmarkData = null;
+        let historicalData = [];
+
+        // ══════════════════════════════════════════════════════════════════
+        // Utility Functions
+        // ══════════════════════════════════════════════════════════════════
+        function tierClass(ns) {
+            if (ns < 10000) return 'fast';
+            if (ns < 100000) return 'medium';
+            return 'slow';
+        }
+
+        function formatNs(ns) {
+            if (ns >= 1e6) return (ns / 1e6).toFixed(2) + ' ms';
+            if (ns >= 1e3) return (ns / 1e3).toFixed(1) + ' µs';
+            return ns.toFixed(0) + ' ns';
+        }
+
+        function formatThroughput(ns, bytes) {
+            if (!ns || !bytes) return '';
+            const mb = (bytes / 1024 / 1024) / (ns / 1e9);
+            return mb.toFixed(1) + ' MB/s';
         }
 
         function escapeHtml(text) {
@@ -175,7 +816,337 @@
             return div.innerHTML;
         }
 
-        loadResults();
+        function shortSha(sha) {
+            return sha ? sha.slice(0, 8) : '—';
+        }
+
+        function formatDate(iso) {
+            try { return new Date(iso).toLocaleString(); } catch { return iso; }
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // Data Loading
+        // ══════════════════════════════════════════════════════════════════
+        async function loadData() {
+            showState('overview-grid', 'loading');
+            try {
+                const res = await fetch('results/latest.json');
+                if (!res.ok) throw new Error('Failed to load latest.json');
+                benchmarkData = await res.json();
+                renderOverview();
+                renderComparison();
+                renderTrends();
+                renderRaw();
+                updateMeta();
+            } catch (e) {
+                showState('overview-grid', 'error', e.message);
+            }
+        }
+
+        async function loadHistory() {
+            try {
+                const res = await fetch('results/history.json');
+                if (!res.ok) return;
+                historicalData = await res.json();
+                renderTrends();
+            } catch { /* ignore */ }
+        }
+
+        function updateMeta() {
+            if (!benchmarkData) return;
+            document.getElementById('commit').textContent = shortSha(benchmarkData.commit);
+            document.getElementById('branch').textContent = benchmarkData.branch || '—';
+            document.getElementById('timestamp').textContent = formatDate(benchmarkData.timestamp);
+            document.getElementById('platform-count').textContent = Object.keys(benchmarkData.platforms || {}).length;
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // Rendering - Overview
+        // ══════════════════════════════════════════════════════════════════
+        function renderOverview() {
+            const grid = document.getElementById('overview-grid');
+            if (!benchmarkData?.platforms) return;
+
+            grid.innerHTML = '';
+
+            for (const [platform, benches] of Object.entries(benchmarkData.platforms)) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const platformClass = platform.includes('linux') ? 'platform-linux' :
+                                      platform.includes('macos') ? 'platform-macos' :
+                                      platform.includes('windows') ? 'platform-windows' : '';
+
+                let rows = '';
+                const sortedEntries = Object.entries(benches).sort((a, b) => a[1].mean_ns - b[1].mean_ns);
+                for (const [name, metrics] of sortedEntries) {
+                    const ns = metrics.mean_ns;
+                    const cls = tierClass(ns);
+                    let display = formatNs(ns);
+                    if (name.startsWith('canonical/encode')) {
+                        const mb = formatThroughput(ns, name.includes('small') ? 200 : name.includes('medium') ? 2000 : 10000);
+                        display += ` <span class="bench-thru">(${mb})</span>`;
+                    }
+                    rows += `<div class="bench-row">
+                        <span class="bench-name">${escapeHtml(name)}</span>
+                        <span class="bench-value ${cls}">${formatNs(ns)}</span>
+                        ${name.startsWith('canonical/encode') ? `<span class="bench-thru">${formatThroughput(ns, name.includes('small') ? 200 : name.includes('medium') ? 2000 : 10000)}</span>` : ''}
+                    </div>`;
+                }
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span class="card-title"><span class="platform-badge ${platformClass}">${platform}</span></span>
+                    </div>
+                    <div class="bench-list">${rows}</div>
+                `;
+                grid.appendChild(card);
+            }
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // Rendering - Comparison Table
+        // ══════════════════════════════════════════════════════════════════
+        function renderComparison() {
+            const wrap = document.getElementById('comparison-table');
+            if (!benchmarkData?.platforms) return;
+
+            const platforms = Object.keys(benchmarkData.platforms);
+            const allBenches = new Set();
+            platforms.forEach(p => Object.keys(benchmarkData.platforms[p]).forEach(b => allBenches.add(b)));
+            const benches = Array.from(allBenches).sort();
+
+            // Compute fastest per benchmark across platforms
+            const fastest = {};
+            benches.forEach(b => {
+                let min = Infinity;
+                platforms.forEach(p => {
+                    const v = benchmarkData.platforms[p]?.[b]?.mean_ns;
+                    if (v && v < min) min = v;
+                });
+                fastest[b] = min;
+            });
+
+            let html = '<table><thead><tr><th>Benchmark</th>';
+            platforms.forEach(p => {
+                const cls = p.includes('linux') ? 'platform-linux' : p.includes('macos') ? 'platform-macos' : 'platform-windows';
+                html += `<th><span class="platform-badge ${cls}">${p}</span></th>`;
+            });
+            html += '<th>Fastest</th></tr></thead><tbody>';
+
+            benches.forEach(b => {
+                html += `<tr><td>${escapeHtml(b)}</td>`;
+                platforms.forEach(p => {
+                    const m = benchmarkData.platforms[p]?.[b];
+                    if (!m) { html += '<td>—</td>'; return; }
+                    const cls = tierClass(m.mean_ns);
+                    const rel = ((m.mean_ns - fastest[b]) / fastest[b] * 100).toFixed(1);
+                    html += `<td><span class="cell-value ${cls}">${formatNs(m.mean_ns)}</span> <span class="cell-delta ${rel > 5 ? 'regressed' : rel < -5 ? 'improved' : 'stable'}">${rel > 0 ? '+' : ''}${rel}%</span></td>`;
+                });
+                html += `<td><span class="cell-value fast">${formatNs(fastest[b])}</span></td></tr>`;
+            });
+
+            html += '</tbody></table>';
+            wrap.innerHTML = html;
+
+            renderComparisonChart(platforms, benches, 'mean_ns');
+        }
+
+        function renderComparisonChart(platforms, benches, metric) {
+            const container = document.getElementById('comparison-chart');
+            container.innerHTML = '';
+
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            canvas.width = container.clientWidth || 800;
+            canvas.height = 300;
+            canvas.style.width = '100%';
+            canvas.style.height = '300px';
+            container.appendChild(canvas);
+
+            // Prepare data for chart (top 10 benches by mean across platforms)
+            const benchAvgs = benches.map(b => {
+                const vals = platforms.map(p => benchmarkData.platforms[p]?.[b]?.[metric]).filter(v => v);
+                return { bench: b, avg: vals.reduce((a, v) => a + v, 0) / vals.length };
+            }).sort((a, b) => a.avg - b.avg).slice(0, 12);
+
+            const labels = benchAvgs.map(b => b.bench);
+            const datasets = platforms.map(p => ({
+                label: p,
+                data: benchAvgs.map(b => benchmarkData.platforms[p]?.[b.bench]?.[metric] || null),
+                backgroundColor: p.includes('linux') ? 'rgba(34,197,94,0.7)' :
+                                 p.includes('macos') ? 'rgba(168,85,247,0.7)' :
+                                 'rgba(59,130,246,0.7)',
+                borderColor: p.includes('linux') ? '#22c55e' :
+                             p.includes('macos') ? '#a855f7' : '#3b82f6'
+            }));
+
+            Chart.drawBarChart(canvas, { labels, datasets });
+        }
+
+        // Metric switcher
+        document.querySelectorAll('#tab-comparison .chart-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#tab-comparison .chart-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const metric = btn.dataset.metric;
+                if (metric === 'relative') {
+                    renderRelativeComparison();
+                } else {
+                    renderComparisonChart(
+                        Object.keys(benchmarkData.platforms),
+                        Array.from(new Set(Object.values(benchmarkData.platforms).flatMap(p => Object.keys(p)))).sort(),
+                        metric
+                    );
+                }
+            });
+        });
+
+        function renderRelativeComparison() {
+            const container = document.getElementById('comparison-chart');
+            container.innerHTML = '';
+
+            const canvas = document.createElement('canvas');
+            canvas.width = container.clientWidth || 800;
+            canvas.height = 300;
+            canvas.style.width = '100%';
+            canvas.style.height = '300px';
+            container.appendChild(canvas);
+
+            const platforms = Object.keys(benchmarkData.platforms);
+            const benches = Array.from(new Set(Object.values(benchmarkData.platforms).flatMap(p => Object.keys(p)))).sort();
+
+            const fastest = {};
+            benches.forEach(b => {
+                let min = Infinity;
+                platforms.forEach(p => {
+                    const v = benchmarkData.platforms[p]?.[b]?.mean_ns;
+                    if (v && v < min) min = v;
+                });
+                fastest[b] = min;
+            });
+
+            const topBenches = benches.slice(0, 15);
+            const labels = topBenches;
+            const datasets = platforms.map(p => ({
+                label: p,
+                data: topBenches.map(b => {
+                    const v = benchmarkData.platforms[p]?.[b]?.mean_ns;
+                    return v ? ((v - fastest[b]) / fastest[b] * 100) : null;
+                }),
+                borderColor: p.includes('linux') ? '#22c55e' : p.includes('macos') ? '#a855f7' : '#3b82f6'
+            }));
+
+            Chart.drawLineChart(canvas, { labels, datasets });
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // Rendering - Trends
+        // ══════════════════════════════════════════════════════════════════
+        function renderTrends() {
+            const container = document.getElementById('trends-chart');
+            container.innerHTML = '';
+
+            if (historicalData.length < 2) {
+                container.innerHTML = '<div class="state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><p>Need 2+ benchmark runs to show trends</p></div>';
+                return;
+            }
+
+            const canvas = document.createElement('canvas');
+            canvas.width = container.clientWidth || 800;
+            canvas.height = 300;
+            canvas.style.width = '100%';
+            canvas.style.height = '300px';
+            container.appendChild(canvas);
+
+            // Aggregate by commit
+            const commits = historicalData.map(h => h.commit).slice(-20);
+            const platforms = [...new Set(historicalData.flatMap(h => Object.keys(h.platforms)))];
+
+            // Pick key benchmarks
+            const keyBenches = ['canonical/encode/small', 'envelope_verify/verify_chain/depth1', 'crypto/ed25519_verify', 'pool_query/get_wanted_after_0'];
+
+            const datasets = platforms.flatMap(p =>
+                keyBenches.map(b => ({
+                    label: `${p} / ${b}`,
+                    data: commits.map(c => {
+                        const h = historicalData.find(x => x.commit === c);
+                        return h?.platforms?.[p]?.[b]?.mean_ns || null;
+                    }),
+                    borderColor: p.includes('linux') ? '#22c55e' : p.includes('macos') ? '#a855f7' : '#3b82f6'
+                }))
+            );
+
+            Chart.drawLineChart(canvas, { labels: commits.map(c => c.slice(0, 6)), datasets });
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // Rendering - Raw JSON
+        // ══════════════════════════════════════════════════════════════════
+        function renderRaw() {
+            const pre = document.getElementById('raw-json');
+            if (benchmarkData) {
+                pre.textContent = JSON.stringify(benchmarkData, null, 2);
+            }
+        }
+
+        function downloadJSON() {
+            if (!benchmarkData) return;
+            const blob = new Blob([JSON.stringify(benchmarkData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `toloo-benchmark-${benchmarkData.commit.slice(0,8)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        async function copyJSON() {
+            if (!benchmarkData) return;
+            await navigator.clipboard.writeText(JSON.stringify(benchmarkData, null, 2));
+            alert('Copied to clipboard!');
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // State Helpers
+        // ══════════════════════════════════════════════════════════════════
+        function showState(containerId, type, message = '') {
+            const el = document.getElementById(containerId);
+            if (!el) return;
+            if (type === 'loading') {
+                el.innerHTML = '<div class="state"><div class="spinner"></div><p>Loading benchmarks…</p></div>';
+            } else if (type === 'error') {
+                el.innerHTML = `<div class="state error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><p>Failed to load: ${escapeHtml(message)}</p></div>`;
+            }
+        }
+
+        // ══════════════════════════════════════════════════════════════════
+        // Tab Switching
+        // ══════════════════════════════════════════════════════════════════
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        // ══════════════════════════════════════════════════════════════════
+        // Init
+        // ══════════════════════════════════════════════════════════════════
+        loadData();
+        loadHistory();
+
+        // Refresh data every 30s
+        setInterval(() => {
+            loadData();
+            loadHistory();
+        }, 30000);
     </script>
 </body>
 </html>
