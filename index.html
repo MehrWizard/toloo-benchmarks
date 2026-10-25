@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toloo Protocol Benchmarks</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 0 0 24px 24px;
+        }
+        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+        .meta { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; font-size: 0.9rem; opacity: 0.8; }
+        .meta span { display: flex; align-items: center; gap: 0.4rem; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e8eaed;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #e8eaed;
+        }
+        .bench-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+        .bench-row:last-child { border-bottom: none; }
+        .bench-name { font-size: 0.85rem; color: #3c4043; max-width: 60%; }
+        .bench-value { font-variant-numeric: tabular-nums; font-family: 'SF Mono', Monaco, monospace; font-size: 0.9rem; font-weight: 500; }
+        .bench-value.fast { color: #1e8e3e; }
+        .bench-value.medium { color: #f9ab00; }
+        .bench-value.slow { color: #d93025; }
+        .platform-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .platform-linux { background: #e8f5e9; color: #1b5e20; }
+        .platform-macos { background: #f3e5f5; color: #6a1b9a; }
+        .platform-windows { background: #e3f2fd; color: #0d47a1; }
+        .throughput { color: #1e8e3e; font-weight: 600; }
+        .note { text-align: center; margin-top: 2rem; color: #5f6368; font-size: 0.85rem; }
+        .legend { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #5f6368; }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .legend-dot.fast { background: #1e8e3e; }
+        .legend-dot.medium { background: #f9ab00; }
+        .legend-dot.slow { background: #d93025; }
+        .loading { text-align: center; padding: 3rem; color: #5f6368; }
+        .error { text-align: center; padding: 3rem; color: #d93025; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .bench-name { max-width: 50%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Toloo Protocol Benchmarks</h1>
+        <p>Cross-platform performance measurements for the decentralized messaging protocol</p>
+        <div class="meta">
+            <span id="commit">Commit: <code>—</code></span>
+            <span id="branch">Branch: <code>—</code></span>
+            <span id="timestamp">Updated: <code>—</code></span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="legend" aria-label="Performance legend">
+            <div class="legend-item"><span class="legend-dot fast"></span> <span>< 10 µs (Very Fast)</span></div>
+            <div class="legend-item"><span class="legend-dot medium"></span> <span>10–100 µs (Fast)</span></div>
+            <div class="legend-item"><span class="legend-dot slow"></span> <span>> 100 µs (Moderate)</span></div>
+        </div>
+
+        <div id="results" class="loading">Loading benchmark results…</div>
+
+        <p class="note">
+            Results collected via GitHub Actions on dedicated runners.
+            <a href="https://github.com/irandawn/toloo/actions/workflows/benchmark.yml" target="_blank" rel="noopener">View workflow</a> ·
+            <a href="https://github.com/irandawn/toloo" target="_blank" rel="noopener">Toloo Protocol</a>
+        </p>
+    </div>
+
+    <script>
+        async function loadResults() {
+            try {
+                const res = await fetch('results/latest.json');
+                if (!res.ok) throw new Error('Failed to load');
+                const data = await res.json();
+                render(data);
+            } catch (e) {
+                document.getElementById('results').innerHTML = `
+                    <div class="error">Failed to load benchmarks: ${e.message}</div>
+                `;
+            }
+        }
+
+        function render(data) {
+            document.getElementById('commit').innerHTML = `Commit: <code>${data.commit.slice(0,8)}</code>`;
+            document.getElementById('branch').innerHTML = `Branch: <code>${data.branch}</code>`;
+            document.getElementById('timestamp').innerHTML = `Updated: <code>${new Date(data.timestamp).toLocaleString()}</code>`;
+
+            const container = document.getElementById('results');
+            container.innerHTML = '';
+
+            for (const [platform, benches] of Object.entries(data.platforms)) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const platformClass = platform.includes('linux') ? 'platform-linux' :
+                                    platform.includes('macos') ? 'platform-macos' :
+                                    platform.includes('windows') ? 'platform-windows' : '';
+
+                let rows = '';
+                for (const [name, metrics] of Object.entries(benches)) {
+                    const ns = metrics.mean_ns;
+                    let cls = 'fast';
+                    if (ns >= 100000) cls = 'slow';
+                    else if (ns >= 10000) cls = 'medium';
+
+                    let display = `${ns.toLocaleString()} ns`;
+                    if (name.startsWith('canonical/encode')) {
+                        const mb = (1000000 / ns).toFixed(1);
+                        display += ` (${mb} MB/s)`;
+                    }
+
+                    rows += `<div class="bench-row">
+                        <span class="bench-name">${escapeHtml(name)}</span>
+                        <span class="bench-value ${cls}">${display}</span>
+                    </div>`;
+                }
+
+                card.innerHTML = `
+                    <h3><span class="platform-badge ${platformClass}">${platform}</span></h3>
+                    ${rows}
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        loadResults();
+    </script>
+</body>
+</html>

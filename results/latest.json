@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-25T13:00:00Z",
+  "commit": "local-dev",
+  "branch": "main",
+  "platforms": {
+    "linux-x86": {
+      "canonical/encode/small": {"mean_ns": 1239, "median_ns": 1220, "std_dev_ns": 28},
+      "canonical/encode/medium": {"mean_ns": 5070, "median_ns": 5050, "std_dev_ns": 98},
+      "canonical/encode/large": {"mean_ns": 18800, "median_ns": 18750, "std_dev_ns": 445},
+      "envelope_verify/verify_chain/depth1": {"mean_ns": 40344, "median_ns": 40100, "std_dev_ns": 2100},
+      "envelope_verify/verify_chain/depth2": {"mean_ns": 71318, "median_ns": 71000, "std_dev_ns": 2900},
+      "parse_envelope": {"mean_ns": 3112, "median_ns": 3090, "std_dev_ns": 83},
+      "event_build/make_room_create": {"mean_ns": 69662, "median_ns": 69400, "std_dev_ns": 2100},
+      "event_build/make_room_message": {"mean_ns": 33602, "median_ns": 33400, "std_dev_ns": 1800},
+      "event_build/make_node_meta": {"mean_ns": 35042, "median_ns": 34900, "std_dev_ns": 850},
+      "pool_query/get_room_channel_1k": {"mean_ns": 23023, "median_ns": 22900, "std_dev_ns": 1500},
+      "pool_query/get_wanted_after_0": {"mean_ns": 1166, "median_ns": 1155, "std_dev_ns": 28},
+      "pool_query/get_wanted_after_tc": {"mean_ns": 1241, "median_ns": 1230, "std_dev_ns": 21},
+      "pool_query/get_by_id": {"mean_ns": 28529, "median_ns": 28200, "std_dev_ns": 2300},
+      "crypto/ed25519_generate": {"mean_ns": 16170, "median_ns": 16100, "std_dev_ns": 480},
+      "crypto/ed25519_sign": {"mean_ns": 32434, "median_ns": 32200, "std_dev_ns": 1250},
+      "crypto/ed25519_verify": {"mean_ns": 35385, "median_ns": 35100, "std_dev_ns": 1200},
+      "crypto/x25519_generate": {"mean_ns": 28694, "median_ns": 28500, "std_dev_ns": 1050},
+      "crypto/x25519_shared_secret": {"mean_ns": 48825, "median_ns": 48600, "std_dev_ns": 2300},
+      "crypto/chacha20_encrypt": {"mean_ns": 1091, "median_ns": 1085, "std_dev_ns": 25},
+      "crypto/chacha20_decrypt": {"mean_ns": 1034, "median_ns": 1030, "std_dev_ns": 16}
+    }
+  }
+}
