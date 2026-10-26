@@ -1,0 +1,517 @@
+{
+  "timestamp": "2026-10-26T14:23:43.158037Z",
+  "commit": "b053cea2dc644ac933491a22e4c75fa6490c9b56",
+  "branch": "main",
+  "platforms": {
+    "macos-arm": {
+      "event_build/make_room_message": {
+        "mean_ns": 28054.152654149075,
+        "median_ns": 28088.730173160173,
+        "std_dev_ns": 514.7112351451539
+      },
+      "crypto/x25519_generate": {
+        "mean_ns": 38050.478811591725,
+        "median_ns": 37435.73565731927,
+        "std_dev_ns": 3529.5014145035534
+      },
+      "pool_query/get_wanted_after_tc": {
+        "mean_ns": 44.499091726538275,
+        "median_ns": 44.145460150904896,
+        "std_dev_ns": 1.1839712741680017
+      },
+      "canonical/encode/large": {
+        "mean_ns": 24553.214422662775,
+        "median_ns": 24610.343522267205,
+        "std_dev_ns": 459.15651767660273
+      },
+      "parse_envelope": {
+        "mean_ns": 3309.5934455262554,
+        "median_ns": 3292.2008147384604,
+        "std_dev_ns": 105.53570614658902
+      },
+      "crypto/x25519_shared_secret": {
+        "mean_ns": 38896.145787509944,
+        "median_ns": 38636.54777708118,
+        "std_dev_ns": 2290.8520908294986
+      },
+      "envelope_verify/verify_chain/depth2": {
+        "mean_ns": 82247.33979822352,
+        "median_ns": 80960.2889546351,
+        "std_dev_ns": 7333.245650303726
+      },
+      "pool_query/get_wanted_after_0": {
+        "mean_ns": 44.04950067175278,
+        "median_ns": 43.77241019611754,
+        "std_dev_ns": 0.8840171325988946
+      },
+      "pool_query/get_room_channel_1k": {
+        "mean_ns": 4406.5782117007975,
+        "median_ns": 4385.717646438225,
+        "std_dev_ns": 169.20086454980952
+      },
+      "envelope_verify/verify_chain/depth1": {
+        "mean_ns": 39342.25163166381,
+        "median_ns": 38927.691257115606,
+        "std_dev_ns": 1894.6037581586882
+      },
+      "event_build/make_node_meta": {
+        "mean_ns": 28681.333052332582,
+        "median_ns": 27875.68959435626,
+        "std_dev_ns": 3187.938182224107
+      },
+      "crypto/ed25519_verify": {
+        "mean_ns": 42469.27905769703,
+        "median_ns": 40764.150681252824,
+        "std_dev_ns": 6894.381183226893
+      },
+      "canonical/encode/medium": {
+        "mean_ns": 5974.434727052471,
+        "median_ns": 5917.957042697818,
+        "std_dev_ns": 313.39137392140407
+      },
+      "canonical/encode/small": {
+        "mean_ns": 1341.0073389993763,
+        "median_ns": 1324.8765364864216,
+        "std_dev_ns": 73.99557913480079
+      },
+      "crypto/chacha20_encrypt": {
+        "mean_ns": 316.55493934351796,
+        "median_ns": 316.03588713509475,
+        "std_dev_ns": 7.511441663257688
+      },
+      "crypto/ed25519_generate": {
+        "mean_ns": 14031.166753124446,
+        "median_ns": 13678.248144575213,
+        "std_dev_ns": 2171.0953242082473
+      },
+      "pool_query/get_by_id": {
+        "mean_ns": 6168.135890045998,
+        "median_ns": 6101.11759849021,
+        "std_dev_ns": 253.09782194173962
+      },
+      "event_build/make_room_create": {
+        "mean_ns": 59663.62824746395,
+        "median_ns": 57966.10936041083,
+        "std_dev_ns": 6393.28731278747
+      },
+      "crypto/chacha20_decrypt": {
+        "mean_ns": 332.90668560038466,
+        "median_ns": 329.5779377524367,
+        "std_dev_ns": 14.811375047942885
+      },
+      "crypto/ed25519_sign": {
+        "mean_ns": 27297.641339398175,
+        "median_ns": 27093.189346926716,
+        "std_dev_ns": 1828.1431731726793
+      }
+    },
+    "macos-x86": {
+      "event_build/make_room_message": {
+        "mean_ns": 28067.85329592291,
+        "median_ns": 27402.013714967205,
+        "std_dev_ns": 3648.7334200298797
+      },
+      "crypto/x25519_generate": {
+        "mean_ns": 37098.442910428756,
+        "median_ns": 37099.949990877576,
+        "std_dev_ns": 2303.573137080082
+      },
+      "pool_query/get_wanted_after_tc": {
+        "mean_ns": 39.44387815461081,
+        "median_ns": 38.96483257517032,
+        "std_dev_ns": 1.8376025186324498
+      },
+      "canonical/encode/large": {
+        "mean_ns": 24524.255252209077,
+        "median_ns": 24261.90014245014,
+        "std_dev_ns": 1457.1303002704155
+      },
+      "parse_envelope": {
+        "mean_ns": 2937.1215554225823,
+        "median_ns": 2938.9863654662704,
+        "std_dev_ns": 131.25822173044793
+      },
+      "crypto/x25519_shared_secret": {
+        "mean_ns": 34340.673413538716,
+        "median_ns": 34400.23870162298,
+        "std_dev_ns": 2569.5422070147006
+      },
+      "envelope_verify/verify_chain/depth2": {
+        "mean_ns": 68636.12692925915,
+        "median_ns": 67507.11857142857,
+        "std_dev_ns": 4401.260574245981
+      },
+      "pool_query/get_wanted_after_0": {
+        "mean_ns": 42.838115650181244,
+        "median_ns": 42.61334250556422,
+        "std_dev_ns": 2.8897667252612607
+      },
+      "pool_query/get_room_channel_1k": {
+        "mean_ns": 4354.223073482212,
+        "median_ns": 4173.281989874162,
+        "std_dev_ns": 431.44539758996746
+      },
+      "envelope_verify/verify_chain/depth1": {
+        "mean_ns": 36486.4546615759,
+        "median_ns": 36202.763418311406,
+        "std_dev_ns": 2166.1391200668927
+      },
+      "event_build/make_node_meta": {
+        "mean_ns": 26101.529017737437,
+        "median_ns": 26390.982882553606,
+        "std_dev_ns": 1383.6159485904811
+      },
+      "crypto/ed25519_verify": {
+        "mean_ns": 33700.30682137646,
+        "median_ns": 33404.41486244583,
+        "std_dev_ns": 1857.5230982490173
+      },
+      "canonical/encode/medium": {
+        "mean_ns": 6338.209574286636,
+        "median_ns": 6272.966982982942,
+        "std_dev_ns": 270.16525586692245
+      },
+      "canonical/encode/small": {
+        "mean_ns": 1296.5947806632828,
+        "median_ns": 1285.6006606493806,
+        "std_dev_ns": 65.48108447510042
+      },
+      "crypto/chacha20_encrypt": {
+        "mean_ns": 308.0241364680606,
+        "median_ns": 310.57247713900375,
+        "std_dev_ns": 21.23443358029284
+      },
+      "crypto/ed25519_generate": {
+        "mean_ns": 11541.649471192211,
+        "median_ns": 11541.178867855844,
+        "std_dev_ns": 362.71683417369934
+      },
+      "pool_query/get_by_id": {
+        "mean_ns": 5757.59993756062,
+        "median_ns": 5756.809428179829,
+        "std_dev_ns": 302.20844666580996
+      },
+      "event_build/make_room_create": {
+        "mean_ns": 51787.27135314094,
+        "median_ns": 50626.038969764835,
+        "std_dev_ns": 2916.975899529585
+      },
+      "crypto/chacha20_decrypt": {
+        "mean_ns": 323.2318673681064,
+        "median_ns": 326.53123892610654,
+        "std_dev_ns": 22.660590546198073
+      },
+      "crypto/ed25519_sign": {
+        "mean_ns": 22160.555504315053,
+        "median_ns": 21442.86094091221,
+        "std_dev_ns": 1384.5346044556081
+      }
+    },
+    "linux-x86": {
+      "event_build/make_room_message": {
+        "mean_ns": 39581.1044581643,
+        "median_ns": 39494.25506072874,
+        "std_dev_ns": 671.0179033826792
+      },
+      "crypto/x25519_generate": {
+        "mean_ns": 32370.27915196214,
+        "median_ns": 32336.92881934317,
+        "std_dev_ns": 192.38284553688015
+      },
+      "pool_query/get_wanted_after_tc": {
+        "mean_ns": 55.906241406749494,
+        "median_ns": 55.85882199984633,
+        "std_dev_ns": 0.3437372549154916
+      },
+      "canonical/encode/large": {
+        "mean_ns": 28628.17784242724,
+        "median_ns": 28543.886042274054,
+        "std_dev_ns": 340.0055401408403
+      },
+      "parse_envelope": {
+        "mean_ns": 3455.8756628850765,
+        "median_ns": 3450.0575904207985,
+        "std_dev_ns": 64.63339580212018
+      },
+      "crypto/x25519_shared_secret": {
+        "mean_ns": 57469.718265937416,
+        "median_ns": 57419.83788829151,
+        "std_dev_ns": 400.32464431586783
+      },
+      "envelope_verify/verify_chain/depth2": {
+        "mean_ns": 85408.65424289493,
+        "median_ns": 85272.90071070235,
+        "std_dev_ns": 998.7016703556657
+      },
+      "pool_query/get_wanted_after_0": {
+        "mean_ns": 56.0485632287715,
+        "median_ns": 55.85553964455666,
+        "std_dev_ns": 0.9539939635713872
+      },
+      "pool_query/get_room_channel_1k": {
+        "mean_ns": 7273.136259289783,
+        "median_ns": 7270.125425975009,
+        "std_dev_ns": 160.28093469002903
+      },
+      "envelope_verify/verify_chain/depth1": {
+        "mean_ns": 41535.93469416821,
+        "median_ns": 41505.11889590721,
+        "std_dev_ns": 235.971841379467
+      },
+      "event_build/make_node_meta": {
+        "mean_ns": 39051.040227260644,
+        "median_ns": 38990.418510976204,
+        "std_dev_ns": 333.7475543335315
+      },
+      "crypto/ed25519_verify": {
+        "mean_ns": 40053.53200855913,
+        "median_ns": 39979.73710754605,
+        "std_dev_ns": 548.945559504334
+      },
+      "canonical/encode/medium": {
+        "mean_ns": 6599.0983406174355,
+        "median_ns": 6578.294428571428,
+        "std_dev_ns": 81.76262934626415
+      },
+      "canonical/encode/small": {
+        "mean_ns": 1263.5047463570643,
+        "median_ns": 1260.4362813787936,
+        "std_dev_ns": 26.44234598185942
+      },
+      "crypto/chacha20_encrypt": {
+        "mean_ns": 1390.3314874631335,
+        "median_ns": 1386.0318156330559,
+        "std_dev_ns": 21.7225533541708
+      },
+      "crypto/ed25519_generate": {
+        "mean_ns": 18303.779166405577,
+        "median_ns": 18127.58266758494,
+        "std_dev_ns": 828.5342088086999
+      },
+      "pool_query/get_by_id": {
+        "mean_ns": 9728.978831384908,
+        "median_ns": 9697.682333483099,
+        "std_dev_ns": 199.62094256918095
+      },
+      "event_build/make_room_create": {
+        "mean_ns": 81961.04462242933,
+        "median_ns": 81793.24436233741,
+        "std_dev_ns": 836.6768094012494
+      },
+      "crypto/chacha20_decrypt": {
+        "mean_ns": 1399.3157961903053,
+        "median_ns": 1398.146949028645,
+        "std_dev_ns": 8.150113060146294
+      },
+      "crypto/ed25519_sign": {
+        "mean_ns": 37082.26230555703,
+        "median_ns": 36939.30808080808,
+        "std_dev_ns": 820.073269293281
+      }
+    },
+    "linux-arm": {
+      "event_build/make_room_message": {
+        "mean_ns": 30990.904230320615,
+        "median_ns": 30989.13404757497,
+        "std_dev_ns": 9.78114390571933
+      },
+      "crypto/x25519_generate": {
+        "mean_ns": 42880.33114453704,
+        "median_ns": 42875.37953970896,
+        "std_dev_ns": 19.439950322954587
+      },
+      "pool_query/get_wanted_after_tc": {
+        "mean_ns": 50.817669697043655,
+        "median_ns": 50.81403521463069,
+        "std_dev_ns": 0.021293148028777204
+      },
+      "canonical/encode/large": {
+        "mean_ns": 21729.519490099407,
+        "median_ns": 21672.660696640316,
+        "std_dev_ns": 295.0669418234943
+      },
+      "parse_envelope": {
+        "mean_ns": 3271.2609808353695,
+        "median_ns": 3269.9876522134973,
+        "std_dev_ns": 3.69193559028605
+      },
+      "crypto/x25519_shared_secret": {
+        "mean_ns": 43989.0167778142,
+        "median_ns": 43984.042607746,
+        "std_dev_ns": 21.10266144110554
+      },
+      "envelope_verify/verify_chain/depth2": {
+        "mean_ns": 94728.94289439816,
+        "median_ns": 94718.51125864185,
+        "std_dev_ns": 35.891602741824705
+      },
+      "pool_query/get_wanted_after_0": {
+        "mean_ns": 50.60233145321226,
+        "median_ns": 50.59949890156079,
+        "std_dev_ns": 0.022451751721478917
+      },
+      "pool_query/get_room_channel_1k": {
+        "mean_ns": 7496.226681754718,
+        "median_ns": 7495.592645207489,
+        "std_dev_ns": 5.12929415865387
+      },
+      "envelope_verify/verify_chain/depth1": {
+        "mean_ns": 46976.31968602296,
+        "median_ns": 46971.29933506978,
+        "std_dev_ns": 20.178731114718303
+      },
+      "event_build/make_node_meta": {
+        "mean_ns": 30655.79629292504,
+        "median_ns": 30655.41140094123,
+        "std_dev_ns": 18.383595871622656
+      },
+      "crypto/ed25519_verify": {
+        "mean_ns": 44637.92945341653,
+        "median_ns": 44635.92540937323,
+        "std_dev_ns": 10.084658273703926
+      },
+      "canonical/encode/medium": {
+        "mean_ns": 5405.212572724963,
+        "median_ns": 5400.8115767837235,
+        "std_dev_ns": 33.25287885640634
+      },
+      "canonical/encode/small": {
+        "mean_ns": 1212.4568186760082,
+        "median_ns": 1211.7605394858433,
+        "std_dev_ns": 2.3805293528054694
+      },
+      "crypto/chacha20_encrypt": {
+        "mean_ns": 319.36934566896883,
+        "median_ns": 319.38256068265747,
+        "std_dev_ns": 0.13155358346110013
+      },
+      "crypto/ed25519_generate": {
+        "mean_ns": 14468.559345665779,
+        "median_ns": 14467.380870447578,
+        "std_dev_ns": 4.996779000898535
+      },
+      "pool_query/get_by_id": {
+        "mean_ns": 9888.92794383075,
+        "median_ns": 9889.977511730023,
+        "std_dev_ns": 31.52169084501235
+      },
+      "event_build/make_room_create": {
+        "mean_ns": 63705.66217528334,
+        "median_ns": 63700.6203258547,
+        "std_dev_ns": 24.12421543198059
+      },
+      "crypto/chacha20_decrypt": {
+        "mean_ns": 318.12042632937425,
+        "median_ns": 318.0675288227044,
+        "std_dev_ns": 0.28031591823007107
+      },
+      "crypto/ed25519_sign": {
+        "mean_ns": 28904.457711152805,
+        "median_ns": 28901.39887413932,
+        "std_dev_ns": 13.72070525843118
+      }
+    },
+    "windows": {
+      "event_build/make_room_message": {
+        "mean_ns": 39057.19707843717,
+        "median_ns": 38808.36994838223,
+        "std_dev_ns": 1013.0324505376668
+      },
+      "crypto/x25519_generate": {
+        "mean_ns": 27876.516605292698,
+        "median_ns": 27732.432033096928,
+        "std_dev_ns": 731.432214144767
+      },
+      "pool_query/get_wanted_after_tc": {
+        "mean_ns": 68.91791591236715,
+        "median_ns": 68.47014160940586,
+        "std_dev_ns": 1.6985193215158243
+      },
+      "canonical/encode/large": {
+        "mean_ns": 25170.807998042666,
+        "median_ns": 23572.820730856445,
+        "std_dev_ns": 3514.9633132603826
+      },
+      "parse_envelope": {
+        "mean_ns": 4173.445040567047,
+        "median_ns": 4139.80174081238,
+        "std_dev_ns": 127.21958774697411
+      },
+      "crypto/x25519_shared_secret": {
+        "mean_ns": 50299.67448364919,
+        "median_ns": 50091.12318840579,
+        "std_dev_ns": 859.1113946438094
+      },
+      "envelope_verify/verify_chain/depth2": {
+        "mean_ns": 73771.76277417576,
+        "median_ns": 73360.26094648386,
+        "std_dev_ns": 1710.9398921163354
+      },
+      "pool_query/get_wanted_after_0": {
+        "mean_ns": 67.77841456155166,
+        "median_ns": 67.40072986995222,
+        "std_dev_ns": 1.9064901802944108
+      },
+      "pool_query/get_room_channel_1k": {
+        "mean_ns": 8994.825516967336,
+        "median_ns": 8890.032042510491,
+        "std_dev_ns": 317.10703028066325
+      },
+      "envelope_verify/verify_chain/depth1": {
+        "mean_ns": 37921.31021277367,
+        "median_ns": 36512.167755991286,
+        "std_dev_ns": 2798.3582496220374
+      },
+      "event_build/make_node_meta": {
+        "mean_ns": 38928.23986125316,
+        "median_ns": 38202.12606837607,
+        "std_dev_ns": 2155.7038764540484
+      },
+      "crypto/ed25519_verify": {
+        "mean_ns": 40199.27628213804,
+        "median_ns": 39955.23927578694,
+        "std_dev_ns": 848.0933287276521
+      },
+      "canonical/encode/medium": {
+        "mean_ns": 5896.93262619455,
+        "median_ns": 5829.709645335563,
+        "std_dev_ns": 236.02465941504346
+      },
+      "canonical/encode/small": {
+        "mean_ns": 1643.6778793695867,
+        "median_ns": 1621.6813513772913,
+        "std_dev_ns": 123.60900664662874
+      },
+      "crypto/chacha20_encrypt": {
+        "mean_ns": 1268.6497004685903,
+        "median_ns": 1259.5070285044903,
+        "std_dev_ns": 26.01857482590683
+      },
+      "crypto/ed25519_generate": {
+        "mean_ns": 18324.46091734276,
+        "median_ns": 17813.542755945353,
+        "std_dev_ns": 1294.8336532100718
+      },
+      "pool_query/get_by_id": {
+        "mean_ns": 11361.588952041779,
+        "median_ns": 11210.549764890282,
+        "std_dev_ns": 568.3481380528808
+      },
+      "event_build/make_room_create": {
+        "mean_ns": 80676.33922518349,
+        "median_ns": 80098.20928059795,
+        "std_dev_ns": 1955.761739067527
+      },
+      "crypto/chacha20_decrypt": {
+        "mean_ns": 1348.8939846409803,
+        "median_ns": 1338.6158323216455,
+        "std_dev_ns": 31.41621219435138
+      },
+      "crypto/ed25519_sign": {
+        "mean_ns": 36814.83698506831,
+        "median_ns": 35909.17508417509,
+        "std_dev_ns": 3165.6231686962733
+      }
+    }
+  }
+}
