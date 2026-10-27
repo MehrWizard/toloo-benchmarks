@@ -139,23 +139,23 @@
       <div class="sim-grid">
         <div class="item">
           <div class="label">Background Load</div>
-          <div class="num">2,100 msg/s</div>
+          <div class="num" id="sim-bg-load">—</div>
           <div class="note">10 rooms × 1k users @ 0.02 msg/s + 1k active @ 0.1 msg/s</div>
         </div>
         <div class="item">
           <div class="label">Single Thread</div>
-          <div class="num text-green">~12,200 msg/s</div>
+          <div class="num text-green" id="sim-single-thread">—</div>
           <div class="note">Per-message: encode + verify + pool + ed25519</div>
         </div>
       </div>
       <div class="sim-grid">
         <div class="item">
           <div class="label">Steady Headroom</div>
-          <div class="big-num text-green">5.8×</div>
+          <div class="big-num text-green" id="sim-steady-headroom">—</div>
         </div>
         <div class="item">
           <div class="label">Burst Headroom (50×)</div>
-          <div class="big-num text-red">0.12×</div>
+          <div class="big-num text-red" id="sim-burst-headroom">—</div>
           <div class="note">Requires horizontal scale or queueing</div>
         </div>
       </div>
@@ -167,11 +167,11 @@
       <h3>Capacity Planning</h3>
       <table class="table">
         <thead><tr><th>Config</th><th>Throughput</th><th>Users (0.1 msg/s)</th><th>Rooms</th></tr></thead>
-        <tbody>
-          <tr><td>1 thread</td><td>12,200 msg/s</td><td>122,000</td><td>10</td></tr>
-          <tr><td>4 threads</td><td>42,700 msg/s</td><td>427,000</td><td>40</td></tr>
-          <tr><td>16 threads (sharded)</td><td>122,000 msg/s</td><td>1,220,000</td><td>160</td></tr>
-          <tr><td>64 threads (NUMA)</td><td>305,000 msg/s</td><td>3,050,000</td><td>640</td></tr>
+        <tbody id="sim-capacity-body">
+          <tr><td>1 thread</td><td>—</td><td>—</td><td>10</td></tr>
+          <tr><td>4 threads</td><td>—</td><td>—</td><td>40</td></tr>
+          <tr><td>16 threads (sharded)</td><td>—</td><td>—</td><td>160</td></tr>
+          <tr><td>64 threads (NUMA)</td><td>—</td><td>—</td><td>640</td></tr>
         </tbody>
       </table>
     </div>
@@ -206,6 +206,73 @@ const PROTOCOLS = [
 ];
 const REF_PROTOCOLS = ['IRC', 'XMPP', 'Matrix'];
 const REF_COLORS = ['var(--amber)', 'var(--red)', 'var(--red)'];
+
+// Per-message hot path components (keys must match latest.json)
+const SIM_COMPONENTS = [
+  'canonical/encode/medium',
+  'envelope_verify/verify_chain/depth1',
+  'pool_query/get_room_channel_1k',
+  'crypto/ed25519_verify',
+];
+
+const BG_LOAD_MSG_S = 2100; // 10 rooms × 1k users @ 0.02 + 1k active @ 0.1
+const BURST_MULTIPLIER = 50;
+
+function fmtNum(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e4 ? 0 : 1) + 'k';
+  return n.toLocaleString();
+}
+
+function fmtMsgPerSec(n) {
+  return '~' + fmtNum(Math.round(n)) + ' msg/s';
+}
+
+function fmtRatio(r) {
+  return (r >= 10 ? r.toFixed(0) : r.toFixed(1)) + '×';
+}
+
+function updateSimulationCard(data) {
+  if (!data || !data.platforms || !data.platforms['linux-x86']) return;
+  const p = data.platforms['linux-x86'];
+
+  // Sum per-message latency for hot path (ns per message)
+  let totalNs = 0;
+  let haveAll = true;
+  SIM_COMPONENTS.forEach(key => {
+    const ns = p[key]?.mean_ns;
+    if (ns) totalNs += ns;
+    else haveAll = false;
+  });
+
+  if (!haveAll || totalNs === 0) return;
+
+  const singleThreadMsgPerSec = 1e9 / totalNs;
+  const steadyHeadroom = singleThreadMsgPerSec / BG_LOAD_MSG_S;
+  const burstHeadroom = singleThreadMsgPerSec / (BG_LOAD_MSG_S * BURST_MULTIPLIER);
+
+  // Update simulation card
+  document.getElementById('sim-bg-load').textContent = fmtNum(BG_LOAD_MSG_S) + ' msg/s';
+  document.getElementById('sim-single-thread').textContent = fmtMsgPerSec(singleThreadMsgPerSec);
+  document.getElementById('sim-steady-headroom').textContent = fmtRatio(steadyHeadroom);
+  document.getElementById('sim-steady-headroom').className = 'big-num ' + (steadyHeadroom >= 1 ? 'text-green' : 'text-red');
+  document.getElementById('sim-burst-headroom').textContent = fmtRatio(burstHeadroom);
+  document.getElementById('sim-burst-headroom').className = 'big-num ' + (burstHeadroom >= 1 ? 'text-green' : 'text-red');
+
+  // Update capacity planning table
+  const threads = [1, 4, 16, 64];
+  const shardingEfficiency = [1, 3.5, 10, 25]; // approximate scaling
+  const rows = document.querySelectorAll('#sim-capacity-body tr');
+  threads.forEach((t, i) => {
+    const throughput = Math.round(singleThreadMsgPerSec * shardingEfficiency[i]);
+    const users = Math.round(throughput * 10); // 0.1 msg/s per user
+    const rooms = t === 1 ? 10 : t === 4 ? 40 : t === 16 ? 160 : 640;
+    const cells = rows[i].querySelectorAll('td');
+    cells[1].textContent = fmtMsgPerSec(throughput);
+    cells[2].textContent = fmtNum(users);
+    cells[3].textContent = rooms.toLocaleString();
+  });
+}
 
 function drawProtocolBars(container, data) {
   const maxMs = Math.max(...PROTOCOLS.map(p => p.latencyMs));
@@ -394,6 +461,7 @@ async function init() {
     const d = await r.json();
     drawProtocolBars(document.getElementById('proto-bars'), d);
     fillSimRows(document.getElementById('sim-rows'), d);
+    updateSimulationCard(d);
     const c = document.getElementById('platform-chart');
     if (c) drawPlatformChart(c, d);
   } catch (e) {}
