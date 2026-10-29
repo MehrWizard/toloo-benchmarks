@@ -16,6 +16,7 @@
     --amber:#e0a020;
     --red:#e05050;
     --blue:#4a9cf0;
+    --text-muted:#a0a0b0;
     --mono:'JetBrains Mono', ui-monospace, monospace;
     --sans:system-ui, -apple-system, Segoe UI, sans-serif;
     --r:10px;
@@ -89,6 +90,9 @@
     width:90px;font-family:var(--mono);font-size:.7rem;color:var(--text);
     text-align:right;flex-shrink:0;
   }
+  .proto-sub{
+    font-size:.55rem;color:var(--text-muted);
+  }
 
   /* Simulation cards */
   .sim-card{
@@ -142,9 +146,9 @@
 </header>
 
 <div class="meta-bar">
-  <span class="meta-item">Commit: 10177a10</span>
+  <span class="meta-item">Commit: 489681ce</span>
   <span class="meta-item">Branch: main</span>
-  <span class="meta-item">Date: 2026-10-29 09:49 UTC</span>
+  <span class="meta-item">Date: 2026-10-29 10:30 UTC</span>
   <span class="meta-item">Runner: linux-x86, linux-arm, windows, macos-x86, macos-arm</span>
 </div>
 
@@ -160,30 +164,30 @@
           <div class="proto-row">
             <span class="proto-label">Toloo</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:10.3%;background:var(--green)"></div>
+              <div class="proto-fill" style="width:10.0%;background:var(--green)"></div>
             </div>
-            <span class="proto-val">2,990 ns</span>
+            <span class="proto-val">2,462 ns</span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">IRC</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:58.5%;background:var(--amber)"></div>
+              <div class="proto-fill" style="width:59.6%;background:var(--amber)"></div>
             </div>
-            <span class="proto-val">50x slower</span>
+            <span class="proto-val">150,000 ns <span class="proto-sub">61x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">XMPP</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:83.1%;background:var(--red)"></div>
+              <div class="proto-fill" style="width:83.6%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">268x slower</span>
+            <span class="proto-val">800,000 ns <span class="proto-sub">325x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">Matrix</span>
             <div class="proto-bar">
               <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">836x slower</span>
+            <span class="proto-val">2,500,000 ns <span class="proto-sub">1,016x slower</span></span>
           </div>
         </div>
       </div>
@@ -194,30 +198,30 @@
           <div class="proto-row">
             <span class="proto-label">Toloo</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:19.6%;background:var(--green)"></div>
+              <div class="proto-fill" style="width:18.7%;background:var(--green)"></div>
             </div>
-            <span class="proto-val">36,037 ns</span>
+            <span class="proto-val">30,045 ns</span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">IRC</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:24.6%;background:var(--amber)"></div>
+              <div class="proto-fill" style="width:26.4%;background:var(--amber)"></div>
             </div>
-            <span class="proto-val">1.4x slower</span>
+            <span class="proto-val">50,000 ns <span class="proto-sub">1.7x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">XMPP</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:63.2%;background:var(--red)"></div>
+              <div class="proto-fill" style="width:64.6%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">8.3x slower</span>
+            <span class="proto-val">300,000 ns <span class="proto-sub">10.0x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">Matrix</span>
             <div class="proto-bar">
               <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">33x slower</span>
+            <span class="proto-val">1,200,000 ns <span class="proto-sub">40x slower</span></span>
           </div>
         </div>
       </div>
@@ -228,30 +232,30 @@
           <div class="proto-row">
             <span class="proto-label">Toloo</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:13.8%;background:var(--green)"></div>
+              <div class="proto-fill" style="width:13.1%;background:var(--green)"></div>
             </div>
-            <span class="proto-val">3,997 ns</span>
+            <span class="proto-val">3,076 ns</span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">IRC</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:35.7%;background:var(--amber)"></div>
+              <div class="proto-fill" style="width:38.2%;background:var(--amber)"></div>
             </div>
-            <span class="proto-val">5.0x slower</span>
+            <span class="proto-val">20,000 ns <span class="proto-sub">6.5x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">XMPP</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:72.8%;background:var(--red)"></div>
+              <div class="proto-fill" style="width:74.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">38x slower</span>
+            <span class="proto-val">150,000 ns <span class="proto-sub">49x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">Matrix</span>
             <div class="proto-bar">
               <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">150x slower</span>
+            <span class="proto-val">600,000 ns <span class="proto-sub">195x slower</span></span>
           </div>
         </div>
       </div>
@@ -262,30 +266,30 @@
           <div class="proto-row">
             <span class="proto-label">Toloo</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:17.6%;background:var(--green)"></div>
+              <div class="proto-fill" style="width:17.0%;background:var(--green)"></div>
             </div>
-            <span class="proto-val">39,728 ns</span>
+            <span class="proto-val">34,218 ns</span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">IRC</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:31.9%;background:var(--amber)"></div>
+              <div class="proto-fill" style="width:33.5%;background:var(--amber)"></div>
             </div>
-            <span class="proto-val">2.5x slower</span>
+            <span class="proto-val">100,000 ns <span class="proto-sub">2.9x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">XMPP</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:66.2%;background:var(--red)"></div>
+              <div class="proto-fill" style="width:67.3%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">13x slower</span>
+            <span class="proto-val">500,000 ns <span class="proto-sub">15x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">Matrix</span>
             <div class="proto-bar">
               <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">50x slower</span>
+            <span class="proto-val">2,000,000 ns <span class="proto-sub">58x slower</span></span>
           </div>
         </div>
       </div>
@@ -296,30 +300,30 @@
           <div class="proto-row">
             <span class="proto-label">Toloo</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:9.5%;background:var(--green)"></div>
+              <div class="proto-fill" style="width:8.9%;background:var(--green)"></div>
             </div>
-            <span class="proto-val">5,580 ns</span>
+            <span class="proto-val">3,426 ns</span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">IRC</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:62.0%;background:var(--amber)"></div>
+              <div class="proto-fill" style="width:64.3%;background:var(--amber)"></div>
             </div>
-            <span class="proto-val">90x slower</span>
+            <span class="proto-val">500,000 ns <span class="proto-sub">146x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">XMPP</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:81.0%;background:var(--red)"></div>
+              <div class="proto-fill" style="width:82.1%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">358x slower</span>
+            <span class="proto-val">2,000,000 ns <span class="proto-sub">584x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">Matrix</span>
             <div class="proto-bar">
               <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">1,434x slower</span>
+            <span class="proto-val">8,000,000 ns <span class="proto-sub">2,335x slower</span></span>
           </div>
         </div>
       </div>
@@ -330,30 +334,30 @@
           <div class="proto-row">
             <span class="proto-label">Toloo</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:23.5%;background:var(--green)"></div>
+              <div class="proto-fill" style="width:20.6%;background:var(--green)"></div>
             </div>
-            <span class="proto-val">44,206 ns</span>
+            <span class="proto-val">28,762 ns</span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">IRC</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:23.8%;background:var(--amber)"></div>
+              <div class="proto-fill" style="width:28.0%;background:var(--amber)"></div>
             </div>
-            <span class="proto-val">1.0x slower</span>
+            <span class="proto-val">45,000 ns <span class="proto-sub">1.6x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">XMPP</span>
             <div class="proto-bar">
-              <div class="proto-fill" style="width:57.9%;background:var(--red)"></div>
+              <div class="proto-fill" style="width:61.7%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">4.5x slower</span>
+            <span class="proto-val">200,000 ns <span class="proto-sub">7.0x slower</span></span>
           </div>
           <div class="proto-row" style="opacity:.82">
             <span class="proto-label">Matrix</span>
             <div class="proto-bar">
               <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
             </div>
-            <span class="proto-val">18x slower</span>
+            <span class="proto-val">800,000 ns <span class="proto-sub">28x slower</span></span>
           </div>
         </div>
       </div>
@@ -376,35 +380,35 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:61.8%;background:#4a9cf0"></div>
+                <div class="chart-platform-fill" style="width:46.1%;background:#4a9cf0"></div>
               </div>
-              <span class="chart-platform-val">3.0 µs</span>
+              <span class="chart-platform-val">2.5 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:58.3%;background:#3dba6e"></div>
+                <div class="chart-platform-fill" style="width:54.1%;background:#3dba6e"></div>
               </div>
-              <span class="chart-platform-val">2.8 µs</span>
+              <span class="chart-platform-val">2.9 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:51.5%;background:#e0a020"></div>
+                <div class="chart-platform-fill" style="width:59.0%;background:#e0a020"></div>
               </div>
-              <span class="chart-platform-val">2.5 µs</span>
+              <span class="chart-platform-val">3.1 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
                 <div class="chart-platform-fill" style="width:100.0%;background:#e05050"></div>
               </div>
-              <span class="chart-platform-val">4.8 µs</span>
+              <span class="chart-platform-val">5.3 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:61.5%;background:#8b6fd0"></div>
+                <div class="chart-platform-fill" style="width:55.6%;background:#8b6fd0"></div>
               </div>
               <span class="chart-platform-val">3.0 µs</span>
             </div>
@@ -414,37 +418,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:78.9%;background:#4a9cf0"></div>
+                <div class="chart-platform-fill" style="width:39.1%;background:#4a9cf0"></div>
               </div>
-              <span class="chart-platform-val">36.0 µs</span>
+              <span class="chart-platform-val">30.0 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:94.0%;background:#3dba6e"></div>
+                <div class="chart-platform-fill" style="width:55.6%;background:#3dba6e"></div>
               </div>
-              <span class="chart-platform-val">42.9 µs</span>
+              <span class="chart-platform-val">42.7 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:68.3%;background:#e0a020"></div>
+                <div class="chart-platform-fill" style="width:49.0%;background:#e0a020"></div>
               </div>
-              <span class="chart-platform-val">31.2 µs</span>
+              <span class="chart-platform-val">37.6 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
                 <div class="chart-platform-fill" style="width:100.0%;background:#e05050"></div>
               </div>
-              <span class="chart-platform-val">45.6 µs</span>
+              <span class="chart-platform-val">76.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:74.2%;background:#8b6fd0"></div>
+                <div class="chart-platform-fill" style="width:43.7%;background:#8b6fd0"></div>
               </div>
-              <span class="chart-platform-val">33.9 µs</span>
+              <span class="chart-platform-val">33.6 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -452,37 +456,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:86.7%;background:#4a9cf0"></div>
+                <div class="chart-platform-fill" style="width:52.3%;background:#4a9cf0"></div>
               </div>
-              <span class="chart-platform-val">4.0 µs</span>
+              <span class="chart-platform-val">3.1 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:77.0%;background:#3dba6e"></div>
+                <div class="chart-platform-fill" style="width:60.3%;background:#3dba6e"></div>
               </div>
-              <span class="chart-platform-val">3.6 µs</span>
+              <span class="chart-platform-val">3.5 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:98.3%;background:#e0a020"></div>
+                <div class="chart-platform-fill" style="width:100.0%;background:#e0a020"></div>
               </div>
-              <span class="chart-platform-val">4.5 µs</span>
+              <span class="chart-platform-val">5.9 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:100.0%;background:#e05050"></div>
+                <div class="chart-platform-fill" style="width:88.8%;background:#e05050"></div>
               </div>
-              <span class="chart-platform-val">4.6 µs</span>
+              <span class="chart-platform-val">5.2 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:77.7%;background:#8b6fd0"></div>
+                <div class="chart-platform-fill" style="width:63.3%;background:#8b6fd0"></div>
               </div>
-              <span class="chart-platform-val">3.6 µs</span>
+              <span class="chart-platform-val">3.7 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -490,37 +494,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:100.0%;background:#4a9cf0"></div>
+                <div class="chart-platform-fill" style="width:73.6%;background:#4a9cf0"></div>
               </div>
-              <span class="chart-platform-val">39.7 µs</span>
+              <span class="chart-platform-val">34.2 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:78.0%;background:#3dba6e"></div>
+                <div class="chart-platform-fill" style="width:66.6%;background:#3dba6e"></div>
               </div>
               <span class="chart-platform-val">31.0 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:99.4%;background:#e0a020"></div>
+                <div class="chart-platform-fill" style="width:100.0%;background:#e0a020"></div>
               </div>
-              <span class="chart-platform-val">39.5 µs</span>
+              <span class="chart-platform-val">46.5 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:88.8%;background:#e05050"></div>
+                <div class="chart-platform-fill" style="width:79.5%;background:#e05050"></div>
               </div>
-              <span class="chart-platform-val">35.3 µs</span>
+              <span class="chart-platform-val">37.0 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:69.1%;background:#8b6fd0"></div>
+                <div class="chart-platform-fill" style="width:60.2%;background:#8b6fd0"></div>
               </div>
-              <span class="chart-platform-val">27.5 µs</span>
+              <span class="chart-platform-val">28.0 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -528,37 +532,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:100.0%;background:#4a9cf0"></div>
+                <div class="chart-platform-fill" style="width:49.1%;background:#4a9cf0"></div>
               </div>
-              <span class="chart-platform-val">5.6 µs</span>
+              <span class="chart-platform-val">3.4 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:79.7%;background:#3dba6e"></div>
+                <div class="chart-platform-fill" style="width:63.2%;background:#3dba6e"></div>
               </div>
               <span class="chart-platform-val">4.4 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:84.1%;background:#e0a020"></div>
+                <div class="chart-platform-fill" style="width:100.0%;background:#e0a020"></div>
               </div>
-              <span class="chart-platform-val">4.7 µs</span>
+              <span class="chart-platform-val">7.0 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:55.5%;background:#e05050"></div>
+                <div class="chart-platform-fill" style="width:51.5%;background:#e05050"></div>
               </div>
-              <span class="chart-platform-val">3.1 µs</span>
+              <span class="chart-platform-val">3.6 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:35.3%;background:#8b6fd0"></div>
+                <div class="chart-platform-fill" style="width:32.0%;background:#8b6fd0"></div>
               </div>
-              <span class="chart-platform-val">2.0 µs</span>
+              <span class="chart-platform-val">2.2 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -566,37 +570,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:100.0%;background:#4a9cf0"></div>
+                <div class="chart-platform-fill" style="width:68.8%;background:#4a9cf0"></div>
               </div>
-              <span class="chart-platform-val">44.2 µs</span>
+              <span class="chart-platform-val">28.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:94.3%;background:#3dba6e"></div>
+                <div class="chart-platform-fill" style="width:100.0%;background:#3dba6e"></div>
               </div>
-              <span class="chart-platform-val">41.7 µs</span>
+              <span class="chart-platform-val">41.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:69.2%;background:#e0a020"></div>
+                <div class="chart-platform-fill" style="width:87.0%;background:#e0a020"></div>
               </div>
-              <span class="chart-platform-val">30.6 µs</span>
+              <span class="chart-platform-val">36.4 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:85.4%;background:#e05050"></div>
+                <div class="chart-platform-fill" style="width:81.6%;background:#e05050"></div>
               </div>
-              <span class="chart-platform-val">37.8 µs</span>
+              <span class="chart-platform-val">34.1 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:75.7%;background:#8b6fd0"></div>
+                <div class="chart-platform-fill" style="width:81.1%;background:#8b6fd0"></div>
               </div>
-              <span class="chart-platform-val">33.5 µs</span>
+              <span class="chart-platform-val">33.9 µs</span>
             </div>
           </div>
         </div>
@@ -626,18 +630,18 @@
         </div>
         <div class="item">
           <div class="label">Single Thread</div>
-          <div class="num text-green">~7,545 msg/s</div>
+          <div class="num text-green">~9,805 msg/s</div>
           <div class="note">Measured: encode + verify + parse + build + pool + crypto</div>
         </div>
       </div>
       <div class="sim-grid">
         <div class="item">
           <div class="label">Steady Headroom</div>
-          <div class="big-num text-green">25.1×</div>
+          <div class="big-num text-green">32.7×</div>
         </div>
         <div class="item">
           <div class="label">Burst Headroom (50×)</div>
-          <div class="big-num text-red">0.50×</div>
+          <div class="big-num text-red">0.65×</div>
           <div class="note">Requires horizontal scale or queueing</div>
         </div>
       </div>
@@ -650,10 +654,10 @@
       <table class="table">
         <thead><tr><th>Config</th><th>Throughput</th><th>Users (0.1 msg/s)</th><th>Rooms</th></tr></thead>
         <tbody>
-          <tr><td>1 thread (ubuntu-slim, 1 vCPU)</td><td>7,545 msg/s</td><td>75,450</td><td>10</td></tr>
-          <tr><td>4 threads (ubuntu-24.04, 4 vCPU)</td><td>24,144 msg/s</td><td>241,440</td><td>40</td></tr>
-          <tr><td>16 threads (sharded, estimated)</td><td>64,132 msg/s</td><td>641,320</td><td>160</td></tr>
-          <tr><td>64 threads (NUMA, estimated)</td><td>135,810 msg/s</td><td>1,358,100</td><td>640</td></tr>
+          <tr><td>1 thread (ubuntu-slim, 1 vCPU)</td><td>9,805 msg/s</td><td>98,050</td><td>10</td></tr>
+          <tr><td>4 threads (ubuntu-24.04, 4 vCPU)</td><td>31,376 msg/s</td><td>313,760</td><td>40</td></tr>
+          <tr><td>16 threads (sharded, estimated)</td><td>83,342 msg/s</td><td>833,420</td><td>160</td></tr>
+          <tr><td>64 threads (NUMA, estimated)</td><td>176,490 msg/s</td><td>1,764,900</td><td>640</td></tr>
         </tbody>
       </table>
     </div>
@@ -664,27 +668,27 @@
       <h3>Key Results (linux-x86, 1 vCPU)</h3>
       <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.75rem;align-items:center">
         <span style="color:var(--text)">Canonical Encode</span>
-        <span style="font-family:var(--mono);color:var(--green);font-weight:600">3.0 µs</span>
+        <span style="font-family:var(--mono);color:var(--green);font-weight:600">2.5 µs</span>
       </div>
       <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.75rem;align-items:center">
         <span style="color:var(--text)">Envelope Verify</span>
-        <span style="font-family:var(--mono);color:var(--green);font-weight:600">36.0 µs</span>
+        <span style="font-family:var(--mono);color:var(--green);font-weight:600">30.0 µs</span>
       </div>
       <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.75rem;align-items:center">
         <span style="color:var(--text)">Parse Envelope</span>
-        <span style="font-family:var(--mono);color:var(--green);font-weight:600">4.0 µs</span>
+        <span style="font-family:var(--mono);color:var(--green);font-weight:600">3.1 µs</span>
       </div>
       <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.75rem;align-items:center">
         <span style="color:var(--text)">Event Build</span>
-        <span style="font-family:var(--mono);color:var(--green);font-weight:600">39.7 µs</span>
+        <span style="font-family:var(--mono);color:var(--green);font-weight:600">34.2 µs</span>
       </div>
       <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.75rem;align-items:center">
         <span style="color:var(--text)">Pool Query (1k)</span>
-        <span style="font-family:var(--mono);color:var(--green);font-weight:600">5.6 µs</span>
+        <span style="font-family:var(--mono);color:var(--green);font-weight:600">3.4 µs</span>
       </div>
       <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.75rem;align-items:center">
         <span style="color:var(--text)">Crypto (ed25519)</span>
-        <span style="font-family:var(--mono);color:var(--green);font-weight:600">44.2 µs</span>
+        <span style="font-family:var(--mono);color:var(--green);font-weight:600">28.8 µs</span>
       </div>
     </div>
   </section>
