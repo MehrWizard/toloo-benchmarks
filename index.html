@@ -460,7 +460,7 @@
   <div class="shell">
 
     <section class="hero" aria-labelledby="hero-title">
-      <p class="meta-line"><span class="mono">commit 738f60a3</span><span class="meta-sep" aria-hidden="true">·</span><span class="mono">2026-11-01 12:27 UTC</span></p>
+      <p class="meta-line"><span class="mono">commit 2a6d3413</span><span class="meta-sep" aria-hidden="true">·</span><span class="mono">2026-11-01 12:41 UTC</span></p>
       <h1 id="hero-title">Protocol <span class="grad-word">performance.</span></h1>
       <p class="lede">Toloo vs IRC, XMPP, Matrix, Signal and Nostr. Lower is better.</p>
     </section>
@@ -491,38 +491,38 @@
           <div class="proto-rows">
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="Canonical Encode, Toloo: 1,490 ns">
-                <div class="proto-fill toloo" style="width:15.8%"></div>
+              <div class="proto-bar" role="img" aria-label="Canonical Encode, Toloo: 807 ns">
+                <div class="proto-fill toloo" style="width:10.7%"></div>
               </div>
-              <span class="proto-val">1,490 ns</span>
+              <span class="proto-val">807 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">IRC</span>
               <div class="proto-bar" role="img" aria-label="Canonical Encode, IRC: 150,000 ns, estimate">
                 <div class="proto-fill" style="width:76.1%;background:var(--amber)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="IRC: 150,000 ns, 101x slower, reference estimate"><span class="proto-inline-ns">150,000 ns</span> <span class="proto-sub">101x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">150,000 ns · 101x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="IRC: 150,000 ns, 186x slower, reference estimate"><span class="proto-inline-ns">150,000 ns</span> <span class="proto-sub">186x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">150,000 ns · 186x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">XMPP</span>
               <div class="proto-bar" role="img" aria-label="Canonical Encode, XMPP: 800,000 ns, estimate">
                 <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="XMPP: 800,000 ns, 537x slower, reference estimate"><span class="proto-inline-ns">800,000 ns</span> <span class="proto-sub">537x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">800,000 ns · 537x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="XMPP: 800,000 ns, 991x slower, reference estimate"><span class="proto-inline-ns">800,000 ns</span> <span class="proto-sub">991x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">800,000 ns · 991x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="Canonical Encode, Matrix: 754 ns">
-                <div class="proto-fill" style="width:10.1%;background:#a78bfa"></div>
+              <div class="proto-bar" role="img" aria-label="Canonical Encode, Matrix: 1,100 ns">
+                <div class="proto-fill" style="width:13.1%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Matrix: 754 ns, 2.0x faster, Matrix event canonical JSON (ruma)"><span class="proto-inline-ns">754 ns</span> <span class="proto-sub">2.0x faster</span><span class="proto-tooltip" aria-hidden="true">754 ns · 2.0x faster · Matrix event canonical JSON (ruma)</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 1,100 ns, 1.4x slower, Matrix event canonical JSON (ruma)"><span class="proto-inline-ns">1,100 ns</span> <span class="proto-sub">1.4x slower</span><span class="proto-tooltip" aria-hidden="true">1,100 ns · 1.4x slower · Matrix event canonical JSON (ruma)</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Nostr</span>
-              <div class="proto-bar" role="img" aria-label="Canonical Encode, Nostr: 735 ns">
+              <div class="proto-bar" role="img" aria-label="Canonical Encode, Nostr: 729 ns">
                 <div class="proto-fill" style="width:9.9%;background:#fb923c"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Nostr: 735 ns, 2.0x faster, Nostr event JSON serialization"><span class="proto-inline-ns">735 ns</span> <span class="proto-sub">2.0x faster</span><span class="proto-tooltip" aria-hidden="true">735 ns · 2.0x faster · Nostr event JSON serialization</span></span>
+              <span class="proto-val proto-parity" tabindex="0" aria-label="Nostr: 729 ns, parity, Nostr event JSON serialization"><span class="proto-inline-ns">729 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">729 ns · parity · Nostr event JSON serialization</span></span>
             </div>
           </div>
         </article>
@@ -534,38 +534,38 @@
           <div class="proto-rows">
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="Envelope Verify, Toloo: 35,848 ns">
-                <div class="proto-fill toloo" style="width:33.2%"></div>
+              <div class="proto-bar" role="img" aria-label="Envelope Verify, Toloo: 24,732 ns">
+                <div class="proto-fill toloo" style="width:26.9%"></div>
               </div>
-              <span class="proto-val">35,848 ns</span>
+              <span class="proto-val">24,732 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">IRC</span>
               <div class="proto-bar" role="img" aria-label="Envelope Verify, IRC: 50,000 ns, estimate">
-                <div class="proto-fill" style="width:41.3%;background:var(--success)"></div>
+                <div class="proto-fill" style="width:42.9%;background:var(--amber)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="IRC: 50,000 ns, 1.4x slower, reference estimate"><span class="proto-inline-ns">50,000 ns</span> <span class="proto-sub">1.4x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">50,000 ns · 1.4x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="IRC: 50,000 ns, 2.0x slower, reference estimate"><span class="proto-inline-ns">50,000 ns</span> <span class="proto-sub">2.0x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">50,000 ns · 2.0x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">XMPP</span>
               <div class="proto-bar" role="img" aria-label="Envelope Verify, XMPP: 300,000 ns, estimate">
                 <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="XMPP: 300,000 ns, 8.4x slower, reference estimate"><span class="proto-inline-ns">300,000 ns</span> <span class="proto-sub">8.4x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">300,000 ns · 8.4x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="XMPP: 300,000 ns, 12x slower, reference estimate"><span class="proto-inline-ns">300,000 ns</span> <span class="proto-sub">12x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">300,000 ns · 12x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="Envelope Verify, Matrix: 32,621 ns">
-                <div class="proto-fill" style="width:31.1%;background:#a78bfa"></div>
+              <div class="proto-bar" role="img" aria-label="Envelope Verify, Matrix: 31,517 ns">
+                <div class="proto-fill" style="width:31.9%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val proto-parity" tabindex="0" aria-label="Matrix: 32,621 ns, parity, Matrix event signature verify (ruma)"><span class="proto-inline-ns">32,621 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">32,621 ns · parity · Matrix event signature verify (ruma)</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 31,517 ns, 1.3x slower, Matrix event signature verify (ruma)"><span class="proto-inline-ns">31,517 ns</span> <span class="proto-sub">1.3x slower</span><span class="proto-tooltip" aria-hidden="true">31,517 ns · 1.3x slower · Matrix event signature verify (ruma)</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Nostr</span>
-              <div class="proto-bar" role="img" aria-label="Envelope Verify, Nostr: 28,944 ns">
-                <div class="proto-fill" style="width:28.5%;background:#fb923c"></div>
+              <div class="proto-bar" role="img" aria-label="Envelope Verify, Nostr: 28,818 ns">
+                <div class="proto-fill" style="width:30.0%;background:#fb923c"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Nostr: 28,944 ns, 1.2x faster, Nostr event id + Schnorr verify"><span class="proto-inline-ns">28,944 ns</span> <span class="proto-sub">1.2x faster</span><span class="proto-tooltip" aria-hidden="true">28,944 ns · 1.2x faster · Nostr event id + Schnorr verify</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Nostr: 28,818 ns, 1.2x slower, Nostr event id + Schnorr verify"><span class="proto-inline-ns">28,818 ns</span> <span class="proto-sub">1.2x slower</span><span class="proto-tooltip" aria-hidden="true">28,818 ns · 1.2x slower · Nostr event id + Schnorr verify</span></span>
             </div>
           </div>
           <p class="proto-note">Signal has no per-message signatures.</p>
@@ -578,45 +578,45 @@
           <div class="proto-rows">
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="Parse Envelope, Toloo: 1,988 ns">
-                <div class="proto-fill toloo" style="width:35.3%"></div>
+              <div class="proto-bar" role="img" aria-label="Parse Envelope, Toloo: 1,282 ns">
+                <div class="proto-fill toloo" style="width:29.6%"></div>
               </div>
-              <span class="proto-val">1,988 ns</span>
+              <span class="proto-val">1,282 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">IRC</span>
               <div class="proto-bar" role="img" aria-label="Parse Envelope, IRC: 20,000 ns, estimate">
-                <div class="proto-fill" style="width:69.2%;background:var(--amber)"></div>
+                <div class="proto-fill" style="width:69.3%;background:var(--amber)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="IRC: 20,000 ns, 10x slower, reference estimate"><span class="proto-inline-ns">20,000 ns</span> <span class="proto-sub">10x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">20,000 ns · 10x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="IRC: 20,000 ns, 16x slower, reference estimate"><span class="proto-inline-ns">20,000 ns</span> <span class="proto-sub">16x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">20,000 ns · 16x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">XMPP</span>
               <div class="proto-bar" role="img" aria-label="Parse Envelope, XMPP: 150,000 ns, estimate">
                 <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="XMPP: 150,000 ns, 75x slower, reference estimate"><span class="proto-inline-ns">150,000 ns</span> <span class="proto-sub">75x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">150,000 ns · 75x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="XMPP: 150,000 ns, 117x slower, reference estimate"><span class="proto-inline-ns">150,000 ns</span> <span class="proto-sub">117x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">150,000 ns · 117x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="Parse Envelope, Matrix: 814 ns">
-                <div class="proto-fill" style="width:23.7%;background:#a78bfa"></div>
+              <div class="proto-bar" role="img" aria-label="Parse Envelope, Matrix: 758 ns">
+                <div class="proto-fill" style="width:23.0%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Matrix: 814 ns, 2.4x faster, Matrix canonical JSON parse"><span class="proto-inline-ns">814 ns</span> <span class="proto-sub">2.4x faster</span><span class="proto-tooltip" aria-hidden="true">814 ns · 2.4x faster · Matrix canonical JSON parse</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 758 ns, 1.7x faster, Matrix canonical JSON parse"><span class="proto-inline-ns">758 ns</span> <span class="proto-sub">1.7x faster</span><span class="proto-tooltip" aria-hidden="true">758 ns · 1.7x faster · Matrix canonical JSON parse</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Signal</span>
-              <div class="proto-bar" role="img" aria-label="Parse Envelope, Signal: 221 ns">
+              <div class="proto-bar" role="img" aria-label="Parse Envelope, Signal: 217 ns">
                 <div class="proto-fill" style="width:10.6%;background:#60a5fa"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Signal: 221 ns, 9.0x faster, Signal protobuf message parse"><span class="proto-inline-ns">221 ns</span> <span class="proto-sub">9.0x faster</span><span class="proto-tooltip" aria-hidden="true">221 ns · 9.0x faster · Signal protobuf message parse</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Signal: 217 ns, 5.9x faster, Signal protobuf message parse"><span class="proto-inline-ns">217 ns</span> <span class="proto-sub">5.9x faster</span><span class="proto-tooltip" aria-hidden="true">217 ns · 5.9x faster · Signal protobuf message parse</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Nostr</span>
-              <div class="proto-bar" role="img" aria-label="Parse Envelope, Nostr: 505 ns">
+              <div class="proto-bar" role="img" aria-label="Parse Envelope, Nostr: 495 ns">
                 <div class="proto-fill" style="width:18.2%;background:#fb923c"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Nostr: 505 ns, 3.9x faster, Nostr event JSON parse"><span class="proto-inline-ns">505 ns</span> <span class="proto-sub">3.9x faster</span><span class="proto-tooltip" aria-hidden="true">505 ns · 3.9x faster · Nostr event JSON parse</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Nostr: 495 ns, 2.6x faster, Nostr event JSON parse"><span class="proto-inline-ns">495 ns</span> <span class="proto-sub">2.6x faster</span><span class="proto-tooltip" aria-hidden="true">495 ns · 2.6x faster · Nostr event JSON parse</span></span>
             </div>
           </div>
         </article>
@@ -628,38 +628,38 @@
           <div class="proto-rows">
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="Event Build, Toloo: 18,845 ns">
-                <div class="proto-fill toloo" style="width:21.3%"></div>
+              <div class="proto-bar" role="img" aria-label="Event Build, Toloo: 11,326 ns">
+                <div class="proto-fill toloo" style="width:18.2%"></div>
               </div>
-              <span class="proto-val">18,845 ns</span>
+              <span class="proto-val">11,326 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">IRC</span>
               <div class="proto-bar" role="img" aria-label="Event Build, IRC: 100,000 ns, estimate">
-                <div class="proto-fill" style="width:56.0%;background:var(--amber)"></div>
+                <div class="proto-fill" style="width:60.0%;background:var(--amber)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="IRC: 100,000 ns, 5.3x slower, reference estimate"><span class="proto-inline-ns">100,000 ns</span> <span class="proto-sub">5.3x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">100,000 ns · 5.3x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="IRC: 100,000 ns, 8.8x slower, reference estimate"><span class="proto-inline-ns">100,000 ns</span> <span class="proto-sub">8.8x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">100,000 ns · 8.8x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">XMPP</span>
               <div class="proto-bar" role="img" aria-label="Event Build, XMPP: 500,000 ns, estimate">
                 <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="XMPP: 500,000 ns, 27x slower, reference estimate"><span class="proto-inline-ns">500,000 ns</span> <span class="proto-sub">27x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">500,000 ns · 27x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="XMPP: 500,000 ns, 44x slower, reference estimate"><span class="proto-inline-ns">500,000 ns</span> <span class="proto-sub">44x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">500,000 ns · 44x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="Event Build, Matrix: 17,962 ns">
-                <div class="proto-fill" style="width:20.6%;background:#a78bfa"></div>
+              <div class="proto-bar" role="img" aria-label="Event Build, Matrix: 17,731 ns">
+                <div class="proto-fill" style="width:24.7%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val proto-parity" tabindex="0" aria-label="Matrix: 17,962 ns, parity, Matrix event sign (canonical JSON + ed25519)"><span class="proto-inline-ns">17,962 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">17,962 ns · parity · Matrix event sign (canonical JSON + ed25519)</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 17,731 ns, 1.6x slower, Matrix event sign (canonical JSON + ed25519)"><span class="proto-inline-ns">17,731 ns</span> <span class="proto-sub">1.6x slower</span><span class="proto-tooltip" aria-hidden="true">17,731 ns · 1.6x slower · Matrix event sign (canonical JSON + ed25519)</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Nostr</span>
-              <div class="proto-bar" role="img" aria-label="Event Build, Nostr: 48,570 ns">
-                <div class="proto-fill" style="width:39.0%;background:#fb923c"></div>
+              <div class="proto-bar" role="img" aria-label="Event Build, Nostr: 48,142 ns">
+                <div class="proto-fill" style="width:43.5%;background:#fb923c"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Nostr: 48,570 ns, 2.6x slower, Nostr event id + Schnorr sign"><span class="proto-inline-ns">48,570 ns</span> <span class="proto-sub">2.6x slower</span><span class="proto-tooltip" aria-hidden="true">48,570 ns · 2.6x slower · Nostr event id + Schnorr sign</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Nostr: 48,142 ns, 4.3x slower, Nostr event id + Schnorr sign"><span class="proto-inline-ns">48,142 ns</span> <span class="proto-sub">4.3x slower</span><span class="proto-tooltip" aria-hidden="true">48,142 ns · 4.3x slower · Nostr event id + Schnorr sign</span></span>
             </div>
           </div>
           <p class="proto-note">Signal has no signed-event build step.</p>
@@ -672,31 +672,31 @@
           <div class="proto-rows">
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="Pool Query 1k, Toloo: 12,734 ns">
-                <div class="proto-fill toloo" style="width:10.8%"></div>
+              <div class="proto-bar" role="img" aria-label="Pool Query 1k, Toloo: 9,808 ns">
+                <div class="proto-fill toloo" style="width:10.3%"></div>
               </div>
-              <span class="proto-val">12,734 ns</span>
+              <span class="proto-val">9,808 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">IRC</span>
               <div class="proto-bar" role="img" aria-label="Pool Query 1k, IRC: 500,000 ns, estimate">
-                <div class="proto-fill" style="width:57.3%;background:var(--amber)"></div>
+                <div class="proto-fill" style="width:58.9%;background:var(--amber)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="IRC: 500,000 ns, 39x slower, reference estimate"><span class="proto-inline-ns">500,000 ns</span> <span class="proto-sub">39x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">500,000 ns · 39x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="IRC: 500,000 ns, 51x slower, reference estimate"><span class="proto-inline-ns">500,000 ns</span> <span class="proto-sub">51x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">500,000 ns · 51x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">XMPP</span>
               <div class="proto-bar" role="img" aria-label="Pool Query 1k, XMPP: 2,000,000 ns, estimate">
-                <div class="proto-fill" style="width:78.6%;background:var(--red)"></div>
+                <div class="proto-fill" style="width:79.4%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="XMPP: 2,000,000 ns, 157x slower, reference estimate"><span class="proto-inline-ns">2,000,000 ns</span> <span class="proto-sub">157x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">2,000,000 ns · 157x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="XMPP: 2,000,000 ns, 204x slower, reference estimate"><span class="proto-inline-ns">2,000,000 ns</span> <span class="proto-sub">204x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">2,000,000 ns · 204x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
               <div class="proto-bar" role="img" aria-label="Pool Query (1k), Matrix: 8,000,000 ns">
                 <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Matrix: 8,000,000 ns, 628x slower, reference estimate"><span class="proto-inline-ns">8,000,000 ns</span> <span class="proto-sub">628x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">8,000,000 ns · 628x slower · reference estimate</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 8,000,000 ns, 816x slower, reference estimate"><span class="proto-inline-ns">8,000,000 ns</span> <span class="proto-sub">816x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">8,000,000 ns · 816x slower · reference estimate</span></span>
             </div>
           </div>
         </article>
@@ -708,31 +708,31 @@
           <div class="proto-rows">
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="Crypto ed25519 verify, Toloo: 30,231 ns">
-                <div class="proto-fill toloo" style="width:34.1%"></div>
+              <div class="proto-bar" role="img" aria-label="Crypto ed25519 verify, Toloo: 24,817 ns">
+                <div class="proto-fill toloo" style="width:31.5%"></div>
               </div>
-              <span class="proto-val">30,231 ns</span>
+              <span class="proto-val">24,817 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">IRC</span>
               <div class="proto-bar" role="img" aria-label="Crypto ed25519 verify, IRC: 45,000 ns, estimate">
-                <div class="proto-fill" style="width:44.9%;background:var(--success)"></div>
+                <div class="proto-fill" style="width:46.9%;background:var(--amber)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="IRC: 45,000 ns, 1.5x slower, reference estimate"><span class="proto-inline-ns">45,000 ns</span> <span class="proto-sub">1.5x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">45,000 ns · 1.5x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="IRC: 45,000 ns, 1.8x slower, reference estimate"><span class="proto-inline-ns">45,000 ns</span> <span class="proto-sub">1.8x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">45,000 ns · 1.8x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">XMPP</span>
               <div class="proto-bar" role="img" aria-label="Crypto ed25519 verify, XMPP: 200,000 ns, estimate">
                 <div class="proto-fill" style="width:100.0%;background:var(--red)"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="XMPP: 200,000 ns, 6.6x slower, reference estimate"><span class="proto-inline-ns">200,000 ns</span> <span class="proto-sub">6.6x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">200,000 ns · 6.6x slower</span></span>
+              <span class="proto-val" tabindex="0" aria-label="XMPP: 200,000 ns, 8.1x slower, reference estimate"><span class="proto-inline-ns">200,000 ns</span> <span class="proto-sub">8.1x slower</span> <span class="proto-est">est</span><span class="proto-tooltip" aria-hidden="true">200,000 ns · 8.1x slower</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="Crypto (ed25519), Matrix: 32,325 ns">
-                <div class="proto-fill" style="width:35.8%;background:#a78bfa"></div>
+              <div class="proto-bar" role="img" aria-label="Crypto (ed25519), Matrix: 30,597 ns">
+                <div class="proto-fill" style="width:36.5%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val proto-parity" tabindex="0" aria-label="Matrix: 32,325 ns, parity, Ed25519 verify (ed25519-dalek, Matrix stack)"><span class="proto-inline-ns">32,325 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">32,325 ns · parity · Ed25519 verify (ed25519-dalek, Matrix stack)</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 30,597 ns, 1.2x slower, Ed25519 verify (ed25519-dalek, Matrix stack)"><span class="proto-inline-ns">30,597 ns</span> <span class="proto-sub">1.2x slower</span><span class="proto-tooltip" aria-hidden="true">30,597 ns · 1.2x slower · Ed25519 verify (ed25519-dalek, Matrix stack)</span></span>
             </div>
           </div>
           <p class="proto-note">Nostr uses Schnorr (secp256k1); Signal is not ed25519.</p>
@@ -746,66 +746,66 @@
               <div class="proto-subhead" role="presentation">Encrypt</div>
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Toloo: 3,649 ns">
-                <div class="proto-fill toloo" style="width:41.6%"></div>
+              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Toloo: 3,602 ns">
+                <div class="proto-fill toloo" style="width:42.0%"></div>
               </div>
-              <span class="proto-val">3,649 ns</span>
+              <span class="proto-val">3,602 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Signal</span>
-              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Signal: 9,438 ns">
-                <div class="proto-fill" style="width:76.7%;background:#60a5fa"></div>
+              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Signal: 9,290 ns">
+                <div class="proto-fill" style="width:77.3%;background:#60a5fa"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Signal: 9,438 ns, 2.6x slower, Double Ratchet encrypt"><span class="proto-inline-ns">9,438 ns</span> <span class="proto-sub">2.6x slower</span><span class="proto-tooltip" aria-hidden="true">9,438 ns · 2.6x slower · Double Ratchet encrypt</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Signal: 9,290 ns, 2.6x slower, Double Ratchet encrypt"><span class="proto-inline-ns">9,290 ns</span> <span class="proto-sub">2.6x slower</span><span class="proto-tooltip" aria-hidden="true">9,290 ns · 2.6x slower · Double Ratchet encrypt</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Matrix: 15,656 ns">
+              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Matrix: 15,148 ns">
                 <div class="proto-fill" style="width:100.0%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Matrix: 15,656 ns, 4.3x slower, Olm encrypt (vodozemac)"><span class="proto-inline-ns">15,656 ns</span> <span class="proto-sub">4.3x slower</span><span class="proto-tooltip" aria-hidden="true">15,656 ns · 4.3x slower · Olm encrypt (vodozemac)</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 15,148 ns, 4.2x slower, Olm encrypt (vodozemac)"><span class="proto-inline-ns">15,148 ns</span> <span class="proto-sub">4.2x slower</span><span class="proto-tooltip" aria-hidden="true">15,148 ns · 4.2x slower · Olm encrypt (vodozemac)</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Nostr</span>
-              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Nostr: 3,893 ns">
-                <div class="proto-fill" style="width:43.6%;background:#fb923c"></div>
+              <div class="proto-bar" role="img" aria-label="1:1 encrypt, Nostr: 3,706 ns">
+                <div class="proto-fill" style="width:42.9%;background:#fb923c"></div>
               </div>
-              <span class="proto-val proto-parity" tabindex="0" aria-label="Nostr: 3,893 ns, parity, NIP-44 v2 encrypt"><span class="proto-inline-ns">3,893 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">3,893 ns · parity · NIP-44 v2 encrypt</span></span>
+              <span class="proto-val proto-parity" tabindex="0" aria-label="Nostr: 3,706 ns, parity, NIP-44 v2 encrypt"><span class="proto-inline-ns">3,706 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">3,706 ns · parity · NIP-44 v2 encrypt</span></span>
             </div>
           </div>
           <div class="proto-col">
               <div class="proto-subhead" role="presentation">Decrypt</div>
             <div class="proto-row toloo">
               <span class="proto-label">Toloo</span>
-              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Toloo: 3,176 ns">
-                <div class="proto-fill toloo" style="width:20.4%"></div>
+              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Toloo: 2,995 ns">
+                <div class="proto-fill toloo" style="width:20.0%"></div>
               </div>
-              <span class="proto-val">3,176 ns</span>
+              <span class="proto-val">2,995 ns</span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Signal</span>
-              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Signal: 92,078 ns">
+              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Signal: 92,059 ns">
                 <div class="proto-fill" style="width:100.0%;background:#60a5fa"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Signal: 92,078 ns, 29x slower, Double Ratchet decrypt"><span class="proto-inline-ns">92,078 ns</span> <span class="proto-sub">29x slower</span><span class="proto-tooltip" aria-hidden="true">92,078 ns · 29x slower · Double Ratchet decrypt</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Signal: 92,059 ns, 31x slower, Double Ratchet decrypt"><span class="proto-inline-ns">92,059 ns</span> <span class="proto-sub">31x slower</span><span class="proto-tooltip" aria-hidden="true">92,059 ns · 31x slower · Double Ratchet decrypt</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Matrix</span>
-              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Matrix: 3,377 ns">
-                <div class="proto-fill" style="width:21.3%;background:#a78bfa"></div>
+              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Matrix: 3,297 ns">
+                <div class="proto-fill" style="width:21.5%;background:#a78bfa"></div>
               </div>
-              <span class="proto-val proto-parity" tabindex="0" aria-label="Matrix: 3,377 ns, parity, Olm decrypt (vodozemac)"><span class="proto-inline-ns">3,377 ns</span> <span class="proto-sub">parity</span><span class="proto-tooltip" aria-hidden="true">3,377 ns · parity · Olm decrypt (vodozemac)</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Matrix: 3,297 ns, 1.1x slower, Olm decrypt (vodozemac)"><span class="proto-inline-ns">3,297 ns</span> <span class="proto-sub">1.1x slower</span><span class="proto-tooltip" aria-hidden="true">3,297 ns · 1.1x slower · Olm decrypt (vodozemac)</span></span>
             </div>
             <div class="proto-row ref">
               <span class="proto-label">Nostr</span>
-              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Nostr: 3,875 ns">
-                <div class="proto-fill" style="width:23.4%;background:#fb923c"></div>
+              <div class="proto-bar" role="img" aria-label="1:1 decrypt, Nostr: 3,844 ns">
+                <div class="proto-fill" style="width:23.9%;background:#fb923c"></div>
               </div>
-              <span class="proto-val" tabindex="0" aria-label="Nostr: 3,875 ns, 1.2x slower, NIP-44 v2 decrypt"><span class="proto-inline-ns">3,875 ns</span> <span class="proto-sub">1.2x slower</span><span class="proto-tooltip" aria-hidden="true">3,875 ns · 1.2x slower · NIP-44 v2 decrypt</span></span>
+              <span class="proto-val" tabindex="0" aria-label="Nostr: 3,844 ns, 1.3x slower, NIP-44 v2 decrypt"><span class="proto-inline-ns">3,844 ns</span> <span class="proto-sub">1.3x slower</span><span class="proto-tooltip" aria-hidden="true">3,844 ns · 1.3x slower · NIP-44 v2 decrypt</span></span>
             </div>
           </div>
           </div>
-          <p class="proto-note">First message incl. setup, send → receive: Signal 313.2 µs → 284.5 µs · Olm 131.2 µs → 108.3 µs · Toloo 25.6 µs → 25.2 µs · Nostr 33.1 µs → 33.1 µs</p>
+          <p class="proto-note">First message incl. setup, send → receive: Signal 303.4 µs → 278.1 µs · Olm 128.7 µs → 105.4 µs · Toloo 26.1 µs → 25.5 µs · Nostr 31.7 µs → 31.9 µs</p>
         </article>
       </div>
     </section>
@@ -826,37 +826,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:61.9%;background:#f43f5e"></div>
+                <div class="chart-platform-fill" style="width:31.2%;background:#f43f5e"></div>
               </div>
-              <span class="chart-platform-val">1.5 µs</span>
+              <span class="chart-platform-val">807 ns</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:62.9%;background:#34d399"></div>
+                <div class="chart-platform-fill" style="width:58.2%;background:#34d399"></div>
               </div>
               <span class="chart-platform-val">1.5 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:71.9%;background:#fbbf24"></div>
+                <div class="chart-platform-fill" style="width:68.9%;background:#fbbf24"></div>
               </div>
-              <span class="chart-platform-val">1.7 µs</span>
+              <span class="chart-platform-val">1.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
                 <div class="chart-platform-fill" style="width:100.0%;background:#a78bfa"></div>
               </div>
-              <span class="chart-platform-val">2.4 µs</span>
+              <span class="chart-platform-val">2.6 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:80.1%;background:#60a5fa"></div>
+                <div class="chart-platform-fill" style="width:79.5%;background:#60a5fa"></div>
               </div>
-              <span class="chart-platform-val">1.9 µs</span>
+              <span class="chart-platform-val">2.1 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -864,37 +864,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:74.1%;background:#f43f5e"></div>
+                <div class="chart-platform-fill" style="width:42.7%;background:#f43f5e"></div>
               </div>
-              <span class="chart-platform-val">35.8 µs</span>
+              <span class="chart-platform-val">24.7 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:88.7%;background:#34d399"></div>
+                <div class="chart-platform-fill" style="width:73.7%;background:#34d399"></div>
               </div>
-              <span class="chart-platform-val">42.9 µs</span>
+              <span class="chart-platform-val">42.6 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:84.3%;background:#fbbf24"></div>
+                <div class="chart-platform-fill" style="width:64.0%;background:#fbbf24"></div>
               </div>
-              <span class="chart-platform-val">40.8 µs</span>
+              <span class="chart-platform-val">37.0 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
                 <div class="chart-platform-fill" style="width:100.0%;background:#a78bfa"></div>
               </div>
-              <span class="chart-platform-val">48.4 µs</span>
+              <span class="chart-platform-val">57.9 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:81.9%;background:#60a5fa"></div>
+                <div class="chart-platform-fill" style="width:64.5%;background:#60a5fa"></div>
               </div>
-              <span class="chart-platform-val">39.6 µs</span>
+              <span class="chart-platform-val">37.3 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -902,14 +902,14 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:73.0%;background:#f43f5e"></div>
+                <div class="chart-platform-fill" style="width:39.7%;background:#f43f5e"></div>
               </div>
-              <span class="chart-platform-val">2.0 µs</span>
+              <span class="chart-platform-val">1.3 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:67.2%;background:#34d399"></div>
+                <div class="chart-platform-fill" style="width:56.8%;background:#34d399"></div>
               </div>
               <span class="chart-platform-val">1.8 µs</span>
             </div>
@@ -918,21 +918,21 @@
               <div class="chart-platform-bar">
                 <div class="chart-platform-fill" style="width:100.0%;background:#fbbf24"></div>
               </div>
-              <span class="chart-platform-val">2.7 µs</span>
+              <span class="chart-platform-val">3.2 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:86.9%;background:#a78bfa"></div>
+                <div class="chart-platform-fill" style="width:69.8%;background:#a78bfa"></div>
               </div>
-              <span class="chart-platform-val">2.4 µs</span>
+              <span class="chart-platform-val">2.3 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:90.9%;background:#60a5fa"></div>
+                <div class="chart-platform-fill" style="width:98.0%;background:#60a5fa"></div>
               </div>
-              <span class="chart-platform-val">2.5 µs</span>
+              <span class="chart-platform-val">3.2 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -940,14 +940,14 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:16.3%;background:#f43f5e"></div>
+                <div class="chart-platform-fill" style="width:8.7%;background:#f43f5e"></div>
               </div>
-              <span class="chart-platform-val">18.8 µs</span>
+              <span class="chart-platform-val">11.3 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:18.8%;background:#34d399"></div>
+                <div class="chart-platform-fill" style="width:16.7%;background:#34d399"></div>
               </div>
               <span class="chart-platform-val">21.7 µs</span>
             </div>
@@ -956,21 +956,21 @@
               <div class="chart-platform-bar">
                 <div class="chart-platform-fill" style="width:100.0%;background:#fbbf24"></div>
               </div>
-              <span class="chart-platform-val">115.8 µs</span>
+              <span class="chart-platform-val">130.2 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:15.5%;background:#a78bfa"></div>
+                <div class="chart-platform-fill" style="width:15.7%;background:#a78bfa"></div>
               </div>
-              <span class="chart-platform-val">17.9 µs</span>
+              <span class="chart-platform-val">20.4 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:13.6%;background:#60a5fa"></div>
+                <div class="chart-platform-fill" style="width:14.7%;background:#60a5fa"></div>
               </div>
-              <span class="chart-platform-val">15.7 µs</span>
+              <span class="chart-platform-val">19.1 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -978,37 +978,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:87.5%;background:#f43f5e"></div>
+                <div class="chart-platform-fill" style="width:95.8%;background:#f43f5e"></div>
               </div>
-              <span class="chart-platform-val">12.7 µs</span>
+              <span class="chart-platform-val">9.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:70.2%;background:#34d399"></div>
+                <div class="chart-platform-fill" style="width:100.0%;background:#34d399"></div>
               </div>
               <span class="chart-platform-val">10.2 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:100.0%;background:#fbbf24"></div>
+                <div class="chart-platform-fill" style="width:91.8%;background:#fbbf24"></div>
               </div>
-              <span class="chart-platform-val">14.6 µs</span>
+              <span class="chart-platform-val">9.4 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:50.7%;background:#a78bfa"></div>
+                <div class="chart-platform-fill" style="width:58.5%;background:#a78bfa"></div>
               </div>
-              <span class="chart-platform-val">7.4 µs</span>
+              <span class="chart-platform-val">6.0 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:40.5%;background:#60a5fa"></div>
+                <div class="chart-platform-fill" style="width:71.4%;background:#60a5fa"></div>
               </div>
-              <span class="chart-platform-val">5.9 µs</span>
+              <span class="chart-platform-val">7.3 µs</span>
             </div>
           </div>
           <div class="chart-group">
@@ -1016,37 +1016,37 @@
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:54.7%;background:#f43f5e"></div>
+                <div class="chart-platform-fill" style="width:59.6%;background:#f43f5e"></div>
               </div>
-              <span class="chart-platform-val">30.2 µs</span>
+              <span class="chart-platform-val">24.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">linux-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:76.0%;background:#34d399"></div>
+                <div class="chart-platform-fill" style="width:99.3%;background:#34d399"></div>
               </div>
-              <span class="chart-platform-val">42.1 µs</span>
+              <span class="chart-platform-val">41.3 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">windows</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:72.2%;background:#fbbf24"></div>
+                <div class="chart-platform-fill" style="width:90.1%;background:#fbbf24"></div>
               </div>
-              <span class="chart-platform-val">40.0 µs</span>
+              <span class="chart-platform-val">37.5 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-x86</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:100.0%;background:#a78bfa"></div>
+                <div class="chart-platform-fill" style="width:83.5%;background:#a78bfa"></div>
               </div>
-              <span class="chart-platform-val">55.3 µs</span>
+              <span class="chart-platform-val">34.8 µs</span>
             </div>
             <div class="chart-platform-row">
               <span class="chart-platform-label">macos-arm</span>
               <div class="chart-platform-bar">
-                <div class="chart-platform-fill" style="width:93.9%;background:#60a5fa"></div>
+                <div class="chart-platform-fill" style="width:100.0%;background:#60a5fa"></div>
               </div>
-              <span class="chart-platform-val">52.0 µs</span>
+              <span class="chart-platform-val">41.6 µs</span>
             </div>
           </div>
         </div>
@@ -1074,28 +1074,28 @@
           </div>
           <div class="sim-item">
             <span class="sim-label">Single thread</span>
-            <span class="sim-num sim-green">~9,888<span class="sim-unit">msg/s</span></span>
+            <span class="sim-num sim-green">~13,741<span class="sim-unit">msg/s</span></span>
           </div>
         </div>
 
-        <div class="sim-headroom" role="group" aria-label="Headroom comparison: steady 33.0 times and burst 0.66 times ambient load on a zero-to-fifty scale; the tick marks one-times saturation">
+        <div class="sim-headroom" role="group" aria-label="Headroom comparison: steady 45.8 times and burst 0.92 times ambient load on a zero-to-fifty scale; the tick marks one-times saturation">
           <div class="sim-head-item">
             <div class="sim-head-line">
               <span class="sim-label">Steady headroom</span>
-              <span class="sim-num sim-green">33.0<span class="sim-unit">×</span></span>
+              <span class="sim-num sim-green">45.8<span class="sim-unit">×</span></span>
             </div>
             <div class="sim-head-track" aria-hidden="true">
-              <span class="sim-head-fill is-green" style="width:calc(33.0 * 2%)"></span>
+              <span class="sim-head-fill is-green" style="width:calc(45.8 * 2%)"></span>
               <span class="sim-head-tick"></span>
             </div>
           </div>
           <div class="sim-head-item">
             <div class="sim-head-line">
               <span class="sim-label">Burst headroom</span>
-              <span class="sim-num sim-red">0.66<span class="sim-unit">×</span></span>
+              <span class="sim-num sim-red">0.92<span class="sim-unit">×</span></span>
             </div>
             <div class="sim-head-track" aria-hidden="true">
-              <span class="sim-head-fill is-red" style="width:calc(0.66 * 2%)"></span>
+              <span class="sim-head-fill is-red" style="width:calc(0.92 * 2%)"></span>
               <span class="sim-head-tick"></span>
             </div>
           </div>
@@ -1118,26 +1118,26 @@
             <tbody>
               <tr>
                 <th scope="row">1 thread</th>
-                <td>9,888</td>
-                <td>98,880</td>
+                <td>13,741</td>
+                <td>137,410</td>
                 <td>10</td>
               </tr>
               <tr>
                 <th scope="row">4 threads</th>
-                <td>31,642</td>
-                <td>316,420</td>
+                <td>43,971</td>
+                <td>439,710</td>
                 <td>40</td>
               </tr>
               <tr>
                 <th scope="row">16 threads</th>
-                <td>84,048</td>
-                <td>840,480</td>
+                <td>116,798</td>
+                <td>1,167,980</td>
                 <td>160</td>
               </tr>
               <tr>
                 <th scope="row">64 threads</th>
-                <td>177,984</td>
-                <td>1,779,840</td>
+                <td>247,338</td>
+                <td>2,473,380</td>
                 <td>640</td>
               </tr>
             </tbody>
@@ -1152,27 +1152,27 @@
           <div class="key-list">
       <div class="key-row">
         <span class="key-label">Canonical Encode</span>
-        <span class="key-value text-green">1.5 µs</span>
+        <span class="key-value text-green">807 ns</span>
       </div>
       <div class="key-row">
         <span class="key-label">Envelope Verify</span>
-        <span class="key-value text-green">35.8 µs</span>
+        <span class="key-value text-green">24.7 µs</span>
       </div>
       <div class="key-row">
         <span class="key-label">Parse Envelope</span>
-        <span class="key-value text-green">2.0 µs</span>
+        <span class="key-value text-green">1.3 µs</span>
       </div>
       <div class="key-row">
         <span class="key-label">Event Build</span>
-        <span class="key-value text-green">18.8 µs</span>
+        <span class="key-value text-green">11.3 µs</span>
       </div>
       <div class="key-row">
         <span class="key-label">Pool Query (1k)</span>
-        <span class="key-value text-green">12.7 µs</span>
+        <span class="key-value text-green">9.8 µs</span>
       </div>
       <div class="key-row">
         <span class="key-label">Crypto (ed25519)</span>
-        <span class="key-value text-green">30.2 µs</span>
+        <span class="key-value text-green">24.8 µs</span>
       </div>
           </div>
           <p class="key-scale">
