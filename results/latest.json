@@ -1,813 +1,813 @@
 {
-  "timestamp": "2026-11-01T08:01:40.800187Z",
-  "commit": "6d8c3137c2c8061a6afc321d0fec08cd7aba1104",
+  "timestamp": "2026-11-01T12:27:20.872178Z",
+  "commit": "738f60a3edbc53241bd8a1e82b28df9247d6af06",
   "branch": "main",
   "platforms": {
     "protocols": {
       "protocol_parse/matrix": {
-        "mean_ns": 732.6692387810026,
-        "median_ns": 732.2848941573485,
-        "std_dev_ns": 5.638823104682648
+        "mean_ns": 814.0452555079647,
+        "median_ns": 804.2005530783742,
+        "std_dev_ns": 27.109773667196034
       },
       "protocol_build/matrix": {
-        "mean_ns": 17216.593749326203,
-        "median_ns": 17205.62371482684,
-        "std_dev_ns": 338.70566365474303
+        "mean_ns": 17962.301343182266,
+        "median_ns": 17873.5950974026,
+        "std_dev_ns": 412.0783917360283
       },
       "protocol_private/olm_setup": {
-        "mean_ns": 109667.81484660471,
-        "median_ns": 109634.10263746383,
-        "std_dev_ns": 2217.6750693306944
+        "mean_ns": 115504.55281761065,
+        "median_ns": 115183.2178030303,
+        "std_dev_ns": 1180.0397930755512
       },
       "protocol_private/signal_encrypt": {
-        "mean_ns": 8930.685259988653,
-        "median_ns": 8916.084870998026,
-        "std_dev_ns": 189.94234158609146
+        "mean_ns": 9438.203322775214,
+        "median_ns": 9426.699537304801,
+        "std_dev_ns": 80.23331108558175
       },
       "protocol_private/olm_decrypt": {
-        "mean_ns": 2981.1769366402123,
-        "median_ns": 2936.037222222222,
-        "std_dev_ns": 190.30528530910706
+        "mean_ns": 3376.528894617707,
+        "median_ns": 3427.426339285714,
+        "std_dev_ns": 236.651310611268
       },
       "protocol_canonical/matrix": {
-        "mean_ns": 616.2071842864755,
-        "median_ns": 606.9140717692856,
-        "std_dev_ns": 35.931583651591616
+        "mean_ns": 754.0898446087627,
+        "median_ns": 746.4679533226697,
+        "std_dev_ns": 50.41931346977752
       },
       "protocol_parse/signal": {
-        "mean_ns": 231.069945173337,
-        "median_ns": 231.16302041398282,
-        "std_dev_ns": 3.175671964542522
+        "mean_ns": 221.25700452260736,
+        "median_ns": 220.94336764083513,
+        "std_dev_ns": 4.471108381841907
       },
       "protocol_canonical/nostr": {
-        "mean_ns": 1203.217413964804,
-        "median_ns": 1195.8785049288063,
-        "std_dev_ns": 95.97327387105723
+        "mean_ns": 735.1103260454031,
+        "median_ns": 733.1368698952231,
+        "std_dev_ns": 20.10428224383313
       },
       "protocol_private/olm_inbound": {
-        "mean_ns": 100336.80062173307,
-        "median_ns": 99583.25310506881,
-        "std_dev_ns": 2548.0274533277366
+        "mean_ns": 108315.23275386314,
+        "median_ns": 108519.05380794703,
+        "std_dev_ns": 971.7873274914605
       },
       "protocol_private/nostr_encrypt": {
-        "mean_ns": 3592.873261490206,
-        "median_ns": 3584.4430121493087,
-        "std_dev_ns": 44.938815604091694
+        "mean_ns": 3893.1663925620333,
+        "median_ns": 3887.2570000428136,
+        "std_dev_ns": 51.4812455624381
       },
       "protocol_private/signal_inbound": {
-        "mean_ns": 264937.6962796873,
-        "median_ns": 262345.96455424273,
-        "std_dev_ns": 6887.326055104694
+        "mean_ns": 284499.4736940837,
+        "median_ns": 284931.5491276401,
+        "std_dev_ns": 3899.235081241596
       },
       "protocol_private/olm_encrypt": {
-        "mean_ns": 14830.316965528133,
-        "median_ns": 14911.457734817495,
-        "std_dev_ns": 442.73871549255256
+        "mean_ns": 15655.57762226604,
+        "median_ns": 15594.707058041839,
+        "std_dev_ns": 290.0792677165238
       },
       "protocol_build/nostr": {
-        "mean_ns": 48996.91853773391,
-        "median_ns": 48780.120588235295,
-        "std_dev_ns": 2467.860145757281
+        "mean_ns": 48569.61634758949,
+        "median_ns": 48438.60084175084,
+        "std_dev_ns": 874.649906227933
       },
       "protocol_private/toloo_encrypt": {
-        "mean_ns": 3305.763420737173,
-        "median_ns": 3311.9951296169675,
-        "std_dev_ns": 102.11011211486401
+        "mean_ns": 3648.6358984435196,
+        "median_ns": 3651.1466348413433,
+        "std_dev_ns": 33.39455842586635
       },
       "protocol_private/toloo_pair_setup": {
-        "mean_ns": 20768.07986656915,
-        "median_ns": 20679.953629124007,
-        "std_dev_ns": 449.31965060237
+        "mean_ns": 21989.644276805375,
+        "median_ns": 21853.903410463994,
+        "std_dev_ns": 406.17971325467556
       },
       "protocol_verify/matrix": {
-        "mean_ns": 30239.555060123774,
-        "median_ns": 30342.612599206346,
-        "std_dev_ns": 550.1173780364813
+        "mean_ns": 32620.88838168448,
+        "median_ns": 32562.222801270596,
+        "std_dev_ns": 362.81884638907314
       },
       "protocol_crypto/matrix_verify": {
-        "mean_ns": 29861.036108628494,
-        "median_ns": 29621.903991389045,
-        "std_dev_ns": 1232.0013086901545
+        "mean_ns": 32325.069273388217,
+        "median_ns": 32311.364249880557,
+        "std_dev_ns": 301.6484817554283
       },
       "protocol_private/signal_setup": {
-        "mean_ns": 281872.9111568712,
-        "median_ns": 281071.20465465466,
-        "std_dev_ns": 3271.7514670929922
+        "mean_ns": 303799.8286686413,
+        "median_ns": 303985.4154704944,
+        "std_dev_ns": 2847.6960862851547
       },
       "protocol_private/nostr_decrypt": {
-        "mean_ns": 3703.664544291262,
-        "median_ns": 3642.9614217508106,
-        "std_dev_ns": 166.1515414006796
+        "mean_ns": 3874.6489062985056,
+        "median_ns": 3869.016142954748,
+        "std_dev_ns": 27.376677394298653
       },
       "protocol_private/toloo_decrypt": {
-        "mean_ns": 2869.541497648246,
-        "median_ns": 2836.5871002203376,
-        "std_dev_ns": 95.64443451975937
+        "mean_ns": 3175.9801951122104,
+        "median_ns": 3166.0850660895107,
+        "std_dev_ns": 107.0316023091957
       },
       "protocol_verify/nostr": {
-        "mean_ns": 27934.43116700756,
-        "median_ns": 27257.047936252126,
-        "std_dev_ns": 1674.0711667844832
+        "mean_ns": 28944.00247560955,
+        "median_ns": 28359.571179270228,
+        "std_dev_ns": 2182.0638910026423
       },
       "protocol_private/nostr_pair_setup": {
-        "mean_ns": 26684.547638535714,
-        "median_ns": 26550.658362513375,
-        "std_dev_ns": 296.21127508366857
+        "mean_ns": 29243.24211080295,
+        "median_ns": 29156.996605134733,
+        "std_dev_ns": 202.65388013170292
       },
       "protocol_private/signal_decrypt": {
-        "mean_ns": 86319.54061965812,
-        "median_ns": 86680.04599358974,
-        "std_dev_ns": 1925.767650967406
+        "mean_ns": 92077.94786416998,
+        "median_ns": 91445.66555059524,
+        "std_dev_ns": 1762.3593401427395
       },
       "protocol_parse/nostr": {
-        "mean_ns": 468.3452674555171,
-        "median_ns": 467.64486125028526,
-        "std_dev_ns": 8.04365501229609
+        "mean_ns": 505.16350786388,
+        "median_ns": 496.8958788814956,
+        "std_dev_ns": 36.067091032357546
       }
     },
     "linux-x86": {
       "envelope_serialize/envelope_to_json_bytes": {
-        "mean_ns": 1114.0152618895931,
-        "median_ns": 1110.613192260148,
-        "std_dev_ns": 22.517584753198395
+        "mean_ns": 887.0663123127347,
+        "median_ns": 885.4966520075532,
+        "std_dev_ns": 13.775312172702916
       },
       "envelope_serialize/to_envelope_json_old": {
-        "mean_ns": 1187.2913929604672,
-        "median_ns": 1182.9813920789343,
-        "std_dev_ns": 30.837547267595912
+        "mean_ns": 1204.3734690653393,
+        "median_ns": 1201.3524823477492,
+        "std_dev_ns": 23.9612316352571
       },
       "parse_envelope/parse_envelope_bytes": {
-        "mean_ns": 2168.357926619969,
-        "median_ns": 2165.5655996554774,
-        "std_dev_ns": 45.799000508897485
+        "mean_ns": 1987.9330891633301,
+        "median_ns": 1981.2330136842106,
+        "std_dev_ns": 46.52814133722749
       },
       "pool_write/put_single": {
-        "mean_ns": 20358.97364498759,
-        "median_ns": 20345.175826194674,
-        "std_dev_ns": 81.84619183087244
+        "mean_ns": 19459.347607918808,
+        "median_ns": 19425.17862943157,
+        "std_dev_ns": 170.1594666288484
       },
       "crypto/ed25519_verify": {
-        "mean_ns": 35133.96683947706,
-        "median_ns": 35065.34477404155,
-        "std_dev_ns": 364.0330833349827
+        "mean_ns": 30230.753757185856,
+        "median_ns": 30070.12510680576,
+        "std_dev_ns": 1295.971186763153
       },
       "canonical/encode/small": {
-        "mean_ns": 308.7433192489268,
-        "median_ns": 310.27179236474467,
-        "std_dev_ns": 13.598374437397357
+        "mean_ns": 271.4455992363309,
+        "median_ns": 270.6054952507535,
+        "std_dev_ns": 7.586668292029587
       },
       "crypto/ed25519_verify_batch_10": {
-        "mean_ns": 187914.8254487386,
-        "median_ns": 187619.79654638434,
-        "std_dev_ns": 1724.5299818161093
+        "mean_ns": 172607.9957638342,
+        "median_ns": 172158.4680001215,
+        "std_dev_ns": 3099.1922224630493
       },
       "crypto/x25519_generate": {
-        "mean_ns": 8883.70412168327,
-        "median_ns": 8828.77853219408,
-        "std_dev_ns": 351.637997685539
+        "mean_ns": 8276.373429631742,
+        "median_ns": 8264.371448412698,
+        "std_dev_ns": 71.74199970308901
       },
       "pool_write/put_batch_100": {
-        "mean_ns": 2225812.7617391306,
-        "median_ns": 2224243.0434782607,
-        "std_dev_ns": 6382.511980725826
+        "mean_ns": 2133240.926666667,
+        "median_ns": 2131299.666666667,
+        "std_dev_ns": 9033.90783320159
       },
       "crypto/x25519_shared_secret": {
-        "mean_ns": 36395.02695651164,
-        "median_ns": 36344.155102040815,
-        "std_dev_ns": 374.0911398012472
+        "mean_ns": 32800.41170219645,
+        "median_ns": 32708.018727598566,
+        "std_dev_ns": 542.8409378192745
       },
       "envelope_verify/verify_chain/depth2": {
-        "mean_ns": 63526.10712572091,
-        "median_ns": 63417.383821825766,
-        "std_dev_ns": 548.3446510132607
+        "mean_ns": 56127.59735542489,
+        "median_ns": 55980.455555555556,
+        "std_dev_ns": 1260.3776359538922
       },
       "crypto/chacha20_decrypt": {
-        "mean_ns": 234.5252636119605,
-        "median_ns": 234.23146904053695,
-        "std_dev_ns": 2.389937183208529
+        "mean_ns": 214.4744049314585,
+        "median_ns": 214.07512695637695,
+        "std_dev_ns": 3.1633864297768843
       },
       "parse_envelope/parse_envelope_from_value": {
-        "mean_ns": 1381.2342511559264,
-        "median_ns": 1382.8016432641434,
-        "std_dev_ns": 54.18424265604521
+        "mean_ns": 1292.7748532884013,
+        "median_ns": 1287.4289247558581,
+        "std_dev_ns": 23.96588125522645
       },
       "event_build/make_room_message": {
-        "mean_ns": 19789.82109732968,
-        "median_ns": 19748.730885757082,
-        "std_dev_ns": 258.5515940342126
+        "mean_ns": 18845.018478087877,
+        "median_ns": 18790.96756665605,
+        "std_dev_ns": 255.8049458508029
       },
       "pool_query/get_by_id": {
-        "mean_ns": 35795.672551494485,
-        "median_ns": 35701.83111111111,
-        "std_dev_ns": 528.4751181004307
+        "mean_ns": 36478.44742373904,
+        "median_ns": 36383.58024027403,
+        "std_dev_ns": 568.6064613406435
       },
       "canonical/encode/large": {
-        "mean_ns": 6514.21137565817,
-        "median_ns": 6467.485914888027,
-        "std_dev_ns": 218.74098182245183
+        "mean_ns": 5962.716423331908,
+        "median_ns": 5946.463804055575,
+        "std_dev_ns": 110.57953029776353
       },
       "pool_query/get_room_channel_1k": {
-        "mean_ns": 9372.137151357649,
-        "median_ns": 9361.651711325805,
-        "std_dev_ns": 50.469924267645716
+        "mean_ns": 12734.25352989533,
+        "median_ns": 12716.934615384616,
+        "std_dev_ns": 135.00086958050417
       },
       "event_build/make_node_meta": {
-        "mean_ns": 19223.205780502514,
-        "median_ns": 19208.721318419237,
-        "std_dev_ns": 84.05651319143021
+        "mean_ns": 18456.121398768133,
+        "median_ns": 18430.48235930736,
+        "std_dev_ns": 169.29481588543894
       },
       "pool_query/get_wanted_after_0": {
-        "mean_ns": 1066.2105747121377,
-        "median_ns": 1063.9841427389815,
-        "std_dev_ns": 9.64876408300729
+        "mean_ns": 1675.8044922837673,
+        "median_ns": 1671.632668029872,
+        "std_dev_ns": 26.331744499791547
       },
       "pool_query/get_wanted_after_tc": {
-        "mean_ns": 1058.3067052203905,
-        "median_ns": 1055.726963479082,
-        "std_dev_ns": 31.677439888102253
+        "mean_ns": 1696.0560643080753,
+        "median_ns": 1691.8277554743072,
+        "std_dev_ns": 29.178755571868418
       },
       "pool_write/put_batch_10": {
-        "mean_ns": 229588.23529741558,
-        "median_ns": 229270.975,
-        "std_dev_ns": 1558.7026946423014
+        "mean_ns": 218745.24128011573,
+        "median_ns": 218475.69263944798,
+        "std_dev_ns": 1673.9785203075805
       },
       "crypto/ed25519_sign": {
-        "mean_ns": 17905.34701131885,
-        "median_ns": 17877.793369818857,
-        "std_dev_ns": 125.64658156098233
+        "mean_ns": 17127.678156622922,
+        "median_ns": 17090.215106360847,
+        "std_dev_ns": 305.6544290333086
       },
       "envelope_verify/verify_chain/depth1": {
-        "mean_ns": 35972.16436636535,
-        "median_ns": 35932.41200354064,
-        "std_dev_ns": 325.6992223748011
+        "mean_ns": 35847.727411952044,
+        "median_ns": 34957.02355257557,
+        "std_dev_ns": 2577.8088983536773
       },
       "crypto/chacha20_encrypt": {
-        "mean_ns": 275.5654973166835,
-        "median_ns": 275.0827170584063,
-        "std_dev_ns": 3.099395843138266
+        "mean_ns": 263.0879913855435,
+        "median_ns": 262.73826444393694,
+        "std_dev_ns": 1.8464734384298649
       },
       "crypto/ed25519_generate": {
-        "mean_ns": 18722.63949556681,
-        "median_ns": 18683.40672550213,
-        "std_dev_ns": 225.65685385974567
+        "mean_ns": 16749.25040545221,
+        "median_ns": 16714.23588435374,
+        "std_dev_ns": 296.44101692644824
       },
       "canonical/encode/medium": {
-        "mean_ns": 1596.3606744272029,
-        "median_ns": 1599.7158553715005,
-        "std_dev_ns": 26.726197363155226
+        "mean_ns": 1490.4731255328807,
+        "median_ns": 1488.8671583370192,
+        "std_dev_ns": 10.747043882115408
       },
       "event_build/make_room_create": {
-        "mean_ns": 40504.66744201602,
-        "median_ns": 40456.153666666665,
-        "std_dev_ns": 271.3012393591395
+        "mean_ns": 38703.94778903952,
+        "median_ns": 38624.25021374118,
+        "std_dev_ns": 553.4334719248008
       }
     },
     "macos-x86": {
       "envelope_serialize/envelope_to_json_bytes": {
-        "mean_ns": 657.9266545381953,
-        "median_ns": 637.1698953931141,
-        "std_dev_ns": 42.17810307772783
+        "mean_ns": 848.8045493826444,
+        "median_ns": 836.8099624518155,
+        "std_dev_ns": 128.70055675784093
       },
       "envelope_serialize/to_envelope_json_old": {
-        "mean_ns": 1107.226389948936,
-        "median_ns": 1060.7740450267033,
-        "std_dev_ns": 141.76312521802916
+        "mean_ns": 1326.1299023563874,
+        "median_ns": 1268.428151857016,
+        "std_dev_ns": 284.0982107793819
       },
       "parse_envelope/parse_envelope_bytes": {
-        "mean_ns": 2062.700008942303,
-        "median_ns": 1978.0262426065779,
-        "std_dev_ns": 223.0626946461527
+        "mean_ns": 2366.1926907006837,
+        "median_ns": 2223.9533263579533,
+        "std_dev_ns": 375.39134375078027
       },
       "pool_write/put_single": {
-        "mean_ns": 15330.062001282022,
-        "median_ns": 15092.571133496134,
-        "std_dev_ns": 592.4741910622092
+        "mean_ns": 29745.675395122733,
+        "median_ns": 27417.397636222653,
+        "std_dev_ns": 7650.174579633574
       },
       "crypto/ed25519_verify": {
-        "mean_ns": 34957.12483619416,
-        "median_ns": 35194.81616310768,
-        "std_dev_ns": 1394.541725645632
+        "mean_ns": 55303.62479850647,
+        "median_ns": 49393.44268518519,
+        "std_dev_ns": 33889.26600525731
       },
       "canonical/encode/small": {
-        "mean_ns": 413.39039417478045,
-        "median_ns": 407.80997873471557,
-        "std_dev_ns": 67.38474427064986
+        "mean_ns": 453.3249026895027,
+        "median_ns": 436.1773479343009,
+        "std_dev_ns": 87.99232009050205
       },
       "crypto/ed25519_verify_batch_10": {
-        "mean_ns": 175752.38757893062,
-        "median_ns": 174416.66666666666,
-        "std_dev_ns": 3790.267886729168
+        "mean_ns": 203916.2404997487,
+        "median_ns": 205675.7061827957,
+        "std_dev_ns": 14516.636897640426
       },
       "crypto/x25519_generate": {
-        "mean_ns": 6885.1593077490215,
-        "median_ns": 6711.507028929975,
-        "std_dev_ns": 235.34887163372457
+        "mean_ns": 7590.662965929168,
+        "median_ns": 7214.792860562327,
+        "std_dev_ns": 911.7367315594742
       },
       "pool_write/put_batch_100": {
-        "mean_ns": 1702568.8293732551,
-        "median_ns": 1640170.8755411254,
-        "std_dev_ns": 121454.68584317798
+        "mean_ns": 2686884.0217647064,
+        "median_ns": 2628243.8529411764,
+        "std_dev_ns": 398289.23471488396
       },
       "crypto/x25519_shared_secret": {
-        "mean_ns": 26530.675168485715,
-        "median_ns": 25790.32898500542,
-        "std_dev_ns": 1257.0797124873206
+        "mean_ns": 32977.656252715395,
+        "median_ns": 31235.650500625783,
+        "std_dev_ns": 5677.29871198235
       },
       "envelope_verify/verify_chain/depth2": {
-        "mean_ns": 79371.90872399983,
-        "median_ns": 74270.5418792517,
-        "std_dev_ns": 15207.742746832984
+        "mean_ns": 71952.30396473409,
+        "median_ns": 68383.76056998558,
+        "std_dev_ns": 10896.978811498264
       },
       "crypto/chacha20_decrypt": {
-        "mean_ns": 327.50937425466,
-        "median_ns": 321.07012080080597,
-        "std_dev_ns": 10.43056085077149
+        "mean_ns": 327.2143920363409,
+        "median_ns": 311.12318206724274,
+        "std_dev_ns": 38.978959483538475
       },
       "parse_envelope/parse_envelope_from_value": {
-        "mean_ns": 1414.0672185184321,
-        "median_ns": 1349.9367341862117,
-        "std_dev_ns": 202.12877699007936
+        "mean_ns": 1867.125808590233,
+        "median_ns": 1828.1921621596202,
+        "std_dev_ns": 360.2302466856515
       },
       "event_build/make_room_message": {
-        "mean_ns": 15690.121490268042,
-        "median_ns": 15187.719703615097,
-        "std_dev_ns": 1976.5605971757677
+        "mean_ns": 17887.423963921177,
+        "median_ns": 17349.192404867805,
+        "std_dev_ns": 2567.0998824825165
       },
       "pool_query/get_by_id": {
-        "mean_ns": 35871.85238016279,
-        "median_ns": 35597.88963963964,
-        "std_dev_ns": 872.819993451768
+        "mean_ns": 61502.709454271266,
+        "median_ns": 60587.333946078434,
+        "std_dev_ns": 11158.275136277174
       },
       "canonical/encode/large": {
-        "mean_ns": 7952.386734984748,
-        "median_ns": 7426.270509977827,
-        "std_dev_ns": 950.5560356386268
+        "mean_ns": 9384.013904426767,
+        "median_ns": 9319.9549366647,
+        "std_dev_ns": 1464.269234809206
       },
       "pool_query/get_room_channel_1k": {
-        "mean_ns": 5374.963465364205,
-        "median_ns": 5254.088801756472,
-        "std_dev_ns": 386.18674921042066
+        "mean_ns": 7373.201479603707,
+        "median_ns": 7219.8046845473555,
+        "std_dev_ns": 1234.656149453283
       },
       "event_build/make_node_meta": {
-        "mean_ns": 16060.419833749283,
-        "median_ns": 15436.087800054556,
-        "std_dev_ns": 1909.3875912469207
+        "mean_ns": 20797.445911920666,
+        "median_ns": 19628.72940408357,
+        "std_dev_ns": 5630.122775994982
       },
       "pool_query/get_wanted_after_0": {
-        "mean_ns": 930.455465494807,
-        "median_ns": 909.0751722072476,
-        "std_dev_ns": 153.41366509698966
+        "mean_ns": 1044.9834853577718,
+        "median_ns": 961.8134956644485,
+        "std_dev_ns": 271.2329507409345
       },
       "pool_query/get_wanted_after_tc": {
-        "mean_ns": 878.9326747365403,
-        "median_ns": 869.6376924147594,
-        "std_dev_ns": 55.81903319377921
+        "mean_ns": 1985.4914069527847,
+        "median_ns": 1445.4665678713934,
+        "std_dev_ns": 2480.028636523644
       },
       "pool_write/put_batch_10": {
-        "mean_ns": 171053.09832826053,
-        "median_ns": 166668.61783751962,
-        "std_dev_ns": 7269.897450923412
+        "mean_ns": 259491.77105594624,
+        "median_ns": 258073.46578947367,
+        "std_dev_ns": 40829.62403490436
       },
       "crypto/ed25519_sign": {
-        "mean_ns": 12846.360910242878,
-        "median_ns": 12763.857950476842,
-        "std_dev_ns": 236.73786443037605
+        "mean_ns": 15766.524851145461,
+        "median_ns": 14612.243200139881,
+        "std_dev_ns": 3621.0354345068345
       },
       "envelope_verify/verify_chain/depth1": {
-        "mean_ns": 40874.5637855757,
-        "median_ns": 39167.280303030304,
-        "std_dev_ns": 7795.2524341239
+        "mean_ns": 48353.94874404022,
+        "median_ns": 43093.82612942613,
+        "std_dev_ns": 14148.997820032993
       },
       "crypto/chacha20_encrypt": {
-        "mean_ns": 355.44506416586904,
-        "median_ns": 350.3050745965465,
-        "std_dev_ns": 9.852578931359627
+        "mean_ns": 363.17918120788397,
+        "median_ns": 352.9425728236988,
+        "std_dev_ns": 26.543981957821565
       },
       "crypto/ed25519_generate": {
-        "mean_ns": 13203.81232450213,
-        "median_ns": 13079.33511865524,
-        "std_dev_ns": 335.3603964878876
+        "mean_ns": 16485.561732718437,
+        "median_ns": 15849.311900921659,
+        "std_dev_ns": 2171.521805676058
       },
       "canonical/encode/medium": {
-        "mean_ns": 1842.9352381540455,
-        "median_ns": 1815.8774372558723,
-        "std_dev_ns": 105.92490028014241
+        "mean_ns": 2409.4451337283012,
+        "median_ns": 2390.2677160634057,
+        "std_dev_ns": 285.3336676976836
       },
       "event_build/make_room_create": {
-        "mean_ns": 30971.040036376362,
-        "median_ns": 30652.096933621935,
-        "std_dev_ns": 1878.4372371130664
+        "mean_ns": 37295.372206762506,
+        "median_ns": 35809.4343277311,
+        "std_dev_ns": 6831.930619021456
       }
     },
     "windows": {
       "envelope_serialize/envelope_to_json_bytes": {
-        "mean_ns": 796.4041449189613,
-        "median_ns": 787.9337393114827,
-        "std_dev_ns": 33.90780994454525
+        "mean_ns": 978.8129748867452,
+        "median_ns": 974.186702696509,
+        "std_dev_ns": 31.01755305175029
       },
       "envelope_serialize/to_envelope_json_old": {
-        "mean_ns": 1473.9198077470317,
-        "median_ns": 1456.7222032353611,
-        "std_dev_ns": 85.54192176337905
+        "mean_ns": 1524.3221763116933,
+        "median_ns": 1517.6112131415161,
+        "std_dev_ns": 51.3230008379642
       },
       "parse_envelope/parse_envelope_bytes": {
-        "mean_ns": 2581.5350961059016,
-        "median_ns": 2568.945919495577,
-        "std_dev_ns": 88.84601478284057
+        "mean_ns": 2722.729804766256,
+        "median_ns": 2710.320608684245,
+        "std_dev_ns": 76.88926792102643
       },
       "pool_write/put_single": {
-        "mean_ns": 129570.36771258371,
-        "median_ns": 122397.64675533134,
-        "std_dev_ns": 22447.117212876306
+        "mean_ns": 120042.67617845786,
+        "median_ns": 116988.02733214498,
+        "std_dev_ns": 9847.476248163672
       },
       "crypto/ed25519_verify": {
-        "mean_ns": 31786.066350892102,
-        "median_ns": 31334.54945799458,
-        "std_dev_ns": 2085.268662757925
+        "mean_ns": 39954.739629679745,
+        "median_ns": 39136.835106382976,
+        "std_dev_ns": 2788.240687437452
       },
       "canonical/encode/small": {
-        "mean_ns": 328.5041554747885,
-        "median_ns": 323.021816434265,
-        "std_dev_ns": 19.49812179450345
+        "mean_ns": 384.3457579651685,
+        "median_ns": 378.2837501215275,
+        "std_dev_ns": 33.52823921245097
       },
       "crypto/ed25519_verify_batch_10": {
-        "mean_ns": 159974.58101511537,
-        "median_ns": 153510.79545454547,
-        "std_dev_ns": 28062.129791268286
+        "mean_ns": 203075.53600314044,
+        "median_ns": 197607.89855072464,
+        "std_dev_ns": 20642.879682342635
       },
       "crypto/x25519_generate": {
-        "mean_ns": 54493.98448811763,
-        "median_ns": 54373.32738626227,
-        "std_dev_ns": 1182.5950760669125
+        "mean_ns": 64040.61628606717,
+        "median_ns": 60430.36412890515,
+        "std_dev_ns": 10207.451965218215
       },
       "pool_write/put_batch_100": {
-        "mean_ns": 13161374.75,
-        "median_ns": 12782237.5,
-        "std_dev_ns": 1612876.1597095048
+        "mean_ns": 12471715.75,
+        "median_ns": 12021712.5,
+        "std_dev_ns": 1057372.822316912
       },
       "crypto/x25519_shared_secret": {
-        "mean_ns": 212325.01144467105,
-        "median_ns": 211276.75,
-        "std_dev_ns": 6259.578393340061
+        "mean_ns": 221074.4339125183,
+        "median_ns": 218584.87969924812,
+        "std_dev_ns": 11719.287891806256
       },
       "envelope_verify/verify_chain/depth2": {
-        "mean_ns": 53572.91790405178,
-        "median_ns": 53234.580267873986,
-        "std_dev_ns": 1965.989545146162
+        "mean_ns": 70127.71236952864,
+        "median_ns": 69442.51461988303,
+        "std_dev_ns": 3175.8718540242276
       },
       "crypto/chacha20_decrypt": {
-        "mean_ns": 272.64797568403895,
-        "median_ns": 270.0277464438666,
-        "std_dev_ns": 13.839271814024066
+        "mean_ns": 288.1727666671584,
+        "median_ns": 285.84375713532853,
+        "std_dev_ns": 10.737034071700021
       },
       "parse_envelope/parse_envelope_from_value": {
-        "mean_ns": 1700.4124670124368,
-        "median_ns": 1681.942182645554,
-        "std_dev_ns": 90.64578209273732
+        "mean_ns": 1954.844185086911,
+        "median_ns": 1935.7997731140103,
+        "std_dev_ns": 61.56815816130897
       },
       "event_build/make_room_message": {
-        "mean_ns": 115064.08236997417,
-        "median_ns": 113958.27944346462,
-        "std_dev_ns": 4586.946742607483
+        "mean_ns": 115763.81080852215,
+        "median_ns": 114675.82030324568,
+        "std_dev_ns": 6117.504485624726
       },
       "pool_query/get_by_id": {
-        "mean_ns": 37297.31601630394,
-        "median_ns": 35638.53385416667,
-        "std_dev_ns": 6786.431960056164
+        "mean_ns": 35001.020239216195,
+        "median_ns": 34536.40118861024,
+        "std_dev_ns": 1777.6225341855945
       },
       "canonical/encode/large": {
-        "mean_ns": 6665.720480363638,
-        "median_ns": 6524.489201274915,
-        "std_dev_ns": 539.1874418501245
+        "mean_ns": 7531.326090053213,
+        "median_ns": 7275.835082400497,
+        "std_dev_ns": 693.7058971575157
       },
       "pool_query/get_room_channel_1k": {
-        "mean_ns": 8191.814763612753,
-        "median_ns": 8161.914970275626,
-        "std_dev_ns": 163.1109862332116
+        "mean_ns": 14555.37016543327,
+        "median_ns": 14522.91845657445,
+        "std_dev_ns": 296.6537620301293
       },
       "event_build/make_node_meta": {
-        "mean_ns": 114865.96993020742,
-        "median_ns": 113034.62962962964,
-        "std_dev_ns": 6799.684940150493
+        "mean_ns": 116281.56086255917,
+        "median_ns": 115724.84934420418,
+        "std_dev_ns": 3196.99559833551
       },
       "pool_query/get_wanted_after_0": {
-        "mean_ns": 955.2063632843534,
-        "median_ns": 949.8560631793478,
-        "std_dev_ns": 26.63303221821417
+        "mean_ns": 2032.0739495718228,
+        "median_ns": 2028.641194108828,
+        "std_dev_ns": 34.29213560509303
       },
       "pool_query/get_wanted_after_tc": {
-        "mean_ns": 1000.0207583855504,
-        "median_ns": 976.9472530422333,
-        "std_dev_ns": 61.80271366187299
+        "mean_ns": 2021.8270397019596,
+        "median_ns": 1999.7448685566756,
+        "std_dev_ns": 76.93387156897185
       },
       "pool_write/put_batch_10": {
-        "mean_ns": 1313550.0860570245,
-        "median_ns": 1284569.4052419355,
-        "std_dev_ns": 155058.28862827714
+        "mean_ns": 1277014.962455378,
+        "median_ns": 1215761.111111111,
+        "std_dev_ns": 156477.9969741297
       },
       "crypto/ed25519_sign": {
-        "mean_ns": 111441.68290894527,
-        "median_ns": 109973.26145552562,
-        "std_dev_ns": 5617.116783928382
+        "mean_ns": 125052.03123825515,
+        "median_ns": 121641.6273562565,
+        "std_dev_ns": 13739.537828384255
       },
       "envelope_verify/verify_chain/depth1": {
-        "mean_ns": 43511.66963990509,
-        "median_ns": 43434.618506493505,
-        "std_dev_ns": 869.5913652397311
+        "mean_ns": 40762.71520740658,
+        "median_ns": 39326.0259271978,
+        "std_dev_ns": 3886.941291890957
       },
       "crypto/chacha20_encrypt": {
-        "mean_ns": 318.64355270626567,
-        "median_ns": 316.0715303215303,
-        "std_dev_ns": 10.444439252127124
+        "mean_ns": 340.3760986818436,
+        "median_ns": 337.36897443778497,
+        "std_dev_ns": 8.920974694392577
       },
       "crypto/ed25519_generate": {
-        "mean_ns": 19175.69820049088,
-        "median_ns": 18758.05849766067,
-        "std_dev_ns": 1860.9340933212272
+        "mean_ns": 17559.721436072112,
+        "median_ns": 17353.65693916554,
+        "std_dev_ns": 843.9429282463602
       },
       "canonical/encode/medium": {
-        "mean_ns": 1584.4512565373714,
-        "median_ns": 1565.5510664582494,
-        "std_dev_ns": 147.5465443868779
+        "mean_ns": 1732.3490083512474,
+        "median_ns": 1722.9998396665064,
+        "std_dev_ns": 42.89706947155736
       },
       "event_build/make_room_create": {
-        "mean_ns": 227328.40377018004,
-        "median_ns": 224230.2764423077,
-        "std_dev_ns": 13242.556291571016
+        "mean_ns": 235080.73494557096,
+        "median_ns": 233579.4371643394,
+        "std_dev_ns": 6865.786741382485
       }
     },
     "macos-arm": {
       "envelope_serialize/envelope_to_json_bytes": {
-        "mean_ns": 942.0364756091784,
-        "median_ns": 866.5553156173025,
-        "std_dev_ns": 294.20774869514355
+        "mean_ns": 857.5847092569903,
+        "median_ns": 789.3084956593453,
+        "std_dev_ns": 174.72320557233866
       },
       "envelope_serialize/to_envelope_json_old": {
-        "mean_ns": 1251.4125097170286,
-        "median_ns": 1166.3131400081402,
-        "std_dev_ns": 394.392796036491
+        "mean_ns": 1297.1372783891215,
+        "median_ns": 1228.9082722300373,
+        "std_dev_ns": 245.3761313122312
       },
       "parse_envelope/parse_envelope_bytes": {
-        "mean_ns": 2258.496903210064,
-        "median_ns": 2185.3512806637805,
-        "std_dev_ns": 305.39091123597166
+        "mean_ns": 2473.6954428811273,
+        "median_ns": 2413.184338744879,
+        "std_dev_ns": 352.0825352401484
       },
       "pool_write/put_single": {
-        "mean_ns": 15778.227964106134,
-        "median_ns": 15491.38738466069,
-        "std_dev_ns": 835.5128919739154
+        "mean_ns": 28108.830420570102,
+        "median_ns": 24672.698395354644,
+        "std_dev_ns": 12035.129394703414
       },
       "crypto/ed25519_verify": {
-        "mean_ns": 33725.383517203554,
-        "median_ns": 33592.74667147668,
-        "std_dev_ns": 422.69795790097453
+        "mean_ns": 51954.69651793222,
+        "median_ns": 48770.00134109311,
+        "std_dev_ns": 15785.28886928564
       },
       "canonical/encode/small": {
-        "mean_ns": 372.464263011989,
-        "median_ns": 362.43789301954246,
-        "std_dev_ns": 50.43702638211772
+        "mean_ns": 327.24235136496424,
+        "median_ns": 319.23887189819106,
+        "std_dev_ns": 28.46300243118924
       },
       "crypto/ed25519_verify_batch_10": {
-        "mean_ns": 177176.9307037736,
-        "median_ns": 176176.48019241652,
-        "std_dev_ns": 3495.998784960249
+        "mean_ns": 227723.62578467856,
+        "median_ns": 218780.2083333333,
+        "std_dev_ns": 33117.41180341292
       },
       "crypto/x25519_generate": {
-        "mean_ns": 6944.782029514775,
-        "median_ns": 6871.8679766004625,
-        "std_dev_ns": 228.272364255824
+        "mean_ns": 7641.879020574028,
+        "median_ns": 7810.052788880732,
+        "std_dev_ns": 624.2085535198123
       },
       "pool_write/put_batch_100": {
-        "mean_ns": 1992353.6874924004,
-        "median_ns": 1896998.8488095237,
-        "std_dev_ns": 360096.7657225481
+        "mean_ns": 2567924.6484999997,
+        "median_ns": 2558426.05,
+        "std_dev_ns": 414361.82740378036
       },
       "crypto/x25519_shared_secret": {
-        "mean_ns": 26953.818335576452,
-        "median_ns": 26550.85566322902,
-        "std_dev_ns": 1004.8138835850427
+        "mean_ns": 30494.034167825546,
+        "median_ns": 30060.16176470588,
+        "std_dev_ns": 3314.817309765033
       },
       "envelope_verify/verify_chain/depth2": {
-        "mean_ns": 77969.35638844654,
-        "median_ns": 75785.63005569091,
-        "std_dev_ns": 10995.159069460236
+        "mean_ns": 70721.95112349988,
+        "median_ns": 69139.40671031096,
+        "std_dev_ns": 7671.86357609912
       },
       "crypto/chacha20_decrypt": {
-        "mean_ns": 324.11784704441015,
-        "median_ns": 320.0784525343005,
-        "std_dev_ns": 11.219477182627188
+        "mean_ns": 370.12310134264123,
+        "median_ns": 367.672697022294,
+        "std_dev_ns": 42.253274661115434
       },
       "parse_envelope/parse_envelope_from_value": {
-        "mean_ns": 1696.4072167177533,
-        "median_ns": 1660.6248097675707,
-        "std_dev_ns": 278.41541077433885
+        "mean_ns": 1594.845570864824,
+        "median_ns": 1572.5094033982514,
+        "std_dev_ns": 250.16445499230656
       },
       "event_build/make_room_message": {
-        "mean_ns": 18681.889005981477,
-        "median_ns": 16353.651528743365,
-        "std_dev_ns": 7154.023921875917
+        "mean_ns": 15738.007129662547,
+        "median_ns": 15043.70681176726,
+        "std_dev_ns": 2049.2371099065845
       },
       "pool_query/get_by_id": {
-        "mean_ns": 36783.97368528246,
-        "median_ns": 36398.89141544646,
-        "std_dev_ns": 1678.0081728963057
+        "mean_ns": 49870.144373365045,
+        "median_ns": 45189.89144927536,
+        "std_dev_ns": 27478.21089242399
       },
       "canonical/encode/large": {
-        "mean_ns": 7902.636059422319,
-        "median_ns": 7639.809422053662,
-        "std_dev_ns": 735.2947900790821
+        "mean_ns": 8164.622825553041,
+        "median_ns": 7897.478915106532,
+        "std_dev_ns": 1131.709102401955
       },
       "pool_query/get_room_channel_1k": {
-        "mean_ns": 7128.790808704563,
-        "median_ns": 6945.382696952805,
-        "std_dev_ns": 1437.4512655524804
+        "mean_ns": 5893.896702611065,
+        "median_ns": 5675.385376893546,
+        "std_dev_ns": 687.1042092682184
       },
       "event_build/make_node_meta": {
-        "mean_ns": 16391.026145843804,
-        "median_ns": 15827.902788370502,
-        "std_dev_ns": 2390.4965512350213
+        "mean_ns": 15446.302759613049,
+        "median_ns": 14690.067717822312,
+        "std_dev_ns": 1893.9119940243302
       },
       "pool_query/get_wanted_after_0": {
-        "mean_ns": 850.5972688613426,
-        "median_ns": 820.6690329218106,
-        "std_dev_ns": 139.70027609741257
+        "mean_ns": 979.8206875296522,
+        "median_ns": 930.5276225471335,
+        "std_dev_ns": 183.9674050077737
       },
       "pool_query/get_wanted_after_tc": {
-        "mean_ns": 809.4775843139349,
-        "median_ns": 752.1779164675345,
-        "std_dev_ns": 107.83415648346767
+        "mean_ns": 1053.1771953481739,
+        "median_ns": 1015.7461858281251,
+        "std_dev_ns": 223.5299898329427
       },
       "pool_write/put_batch_10": {
-        "mean_ns": 210781.8008493788,
-        "median_ns": 197945.85333770706,
-        "std_dev_ns": 73714.8902264235
+        "mean_ns": 244972.47879172504,
+        "median_ns": 234089.6576923077,
+        "std_dev_ns": 64817.426006972455
       },
       "crypto/ed25519_sign": {
-        "mean_ns": 13211.872403793403,
-        "median_ns": 12987.19601532567,
-        "std_dev_ns": 824.2453686197354
+        "mean_ns": 16053.783613070478,
+        "median_ns": 15190.213997395833,
+        "std_dev_ns": 3341.295543556365
       },
       "envelope_verify/verify_chain/depth1": {
-        "mean_ns": 44193.28878420591,
-        "median_ns": 43115.47729700855,
-        "std_dev_ns": 5008.815801091897
+        "mean_ns": 39586.22787428432,
+        "median_ns": 38588.32934343434,
+        "std_dev_ns": 6437.437299928878
       },
       "crypto/chacha20_encrypt": {
-        "mean_ns": 345.3048858289441,
-        "median_ns": 342.5609687539643,
-        "std_dev_ns": 14.375091099843944
+        "mean_ns": 410.8092715899363,
+        "median_ns": 409.13056975687346,
+        "std_dev_ns": 36.309165721299856
       },
       "crypto/ed25519_generate": {
-        "mean_ns": 13433.854808993814,
-        "median_ns": 13344.62885338346,
-        "std_dev_ns": 242.98079008054987
+        "mean_ns": 17615.661425388298,
+        "median_ns": 16240.33780502911,
+        "std_dev_ns": 4743.286046498598
       },
       "canonical/encode/medium": {
-        "mean_ns": 1939.5106861897384,
-        "median_ns": 1848.6918560625481,
-        "std_dev_ns": 245.4347422365143
+        "mean_ns": 1930.6326027497503,
+        "median_ns": 1832.207769240295,
+        "std_dev_ns": 375.47780912867455
       },
       "event_build/make_room_create": {
-        "mean_ns": 39208.08241143066,
-        "median_ns": 39525.85524891775,
-        "std_dev_ns": 7129.5507558644385
+        "mean_ns": 39580.50798681607,
+        "median_ns": 38649.199205050274,
+        "std_dev_ns": 5945.308791706232
       }
     },
     "linux-arm": {
       "envelope_serialize/envelope_to_json_bytes": {
-        "mean_ns": 857.1156164790575,
-        "median_ns": 857.0393255543041,
-        "std_dev_ns": 0.33565781749677764
+        "mean_ns": 841.2722051396707,
+        "median_ns": 841.2367140970707,
+        "std_dev_ns": 0.2834404866153048
       },
       "envelope_serialize/to_envelope_json_old": {
-        "mean_ns": 1101.99091466478,
-        "median_ns": 1101.8840934371524,
-        "std_dev_ns": 0.6229309783335163
+        "mean_ns": 1116.4967625524,
+        "median_ns": 1116.4275914293248,
+        "std_dev_ns": 0.85502620203728
       },
       "parse_envelope/parse_envelope_bytes": {
-        "mean_ns": 1861.8958286833708,
-        "median_ns": 1861.8674674803492,
-        "std_dev_ns": 0.9507564710784436
+        "mean_ns": 1830.9153861179789,
+        "median_ns": 1830.7100150184842,
+        "std_dev_ns": 0.8734757740097415
       },
       "pool_write/put_single": {
-        "mean_ns": 22941.208514368274,
-        "median_ns": 22930.59845803842,
-        "std_dev_ns": 65.9266684087698
+        "mean_ns": 22855.09305204316,
+        "median_ns": 22840.673378212974,
+        "std_dev_ns": 63.66555710095078
       },
       "crypto/ed25519_verify": {
-        "mean_ns": 41894.202175216546,
-        "median_ns": 41891.07239667204,
-        "std_dev_ns": 15.073410422724553
+        "mean_ns": 42058.1749455872,
+        "median_ns": 42054.94417144417,
+        "std_dev_ns": 17.206105528223674
       },
       "canonical/encode/small": {
-        "mean_ns": 276.9172158480438,
-        "median_ns": 276.87114627983317,
-        "std_dev_ns": 0.5383670170606402
+        "mean_ns": 274.8034116848567,
+        "median_ns": 274.8135061302246,
+        "std_dev_ns": 0.22190817606559318
       },
       "crypto/ed25519_verify_batch_10": {
-        "mean_ns": 215004.66128359677,
-        "median_ns": 214994.0774613402,
-        "std_dev_ns": 72.93393365238487
+        "mean_ns": 214958.13242097676,
+        "median_ns": 214925.48532477947,
+        "std_dev_ns": 117.17378203278804
       },
       "crypto/x25519_generate": {
-        "mean_ns": 10289.896878721382,
-        "median_ns": 10289.428667724029,
-        "std_dev_ns": 2.2425885512909556
+        "mean_ns": 10269.567787574959,
+        "median_ns": 10267.911855670103,
+        "std_dev_ns": 6.378262761869564
       },
       "pool_write/put_batch_100": {
-        "mean_ns": 2476183.4961904776,
-        "median_ns": 2476047.833333333,
-        "std_dev_ns": 2053.8388066399484
+        "mean_ns": 2470923.6761904755,
+        "median_ns": 2470828.0,
+        "std_dev_ns": 1758.2643181276026
       },
       "crypto/x25519_shared_secret": {
-        "mean_ns": 42210.17509261807,
-        "median_ns": 42202.95486111111,
-        "std_dev_ns": 42.55364453405268
+        "mean_ns": 42206.01497817638,
+        "median_ns": 42205.28154605602,
+        "std_dev_ns": 7.147328542573965
       },
       "envelope_verify/verify_chain/depth2": {
-        "mean_ns": 73299.48854507474,
-        "median_ns": 73294.23979591837,
-        "std_dev_ns": 27.247996771605617
+        "mean_ns": 73804.21717882318,
+        "median_ns": 73796.97696025779,
+        "std_dev_ns": 27.425324652708536
       },
       "crypto/chacha20_decrypt": {
-        "mean_ns": 287.56436816161505,
-        "median_ns": 287.5506129429761,
-        "std_dev_ns": 0.18470896956956878
+        "mean_ns": 286.6130582284483,
+        "median_ns": 286.5816709750351,
+        "std_dev_ns": 0.1632967019555417
       },
       "parse_envelope/parse_envelope_from_value": {
-        "mean_ns": 1297.3718700552843,
-        "median_ns": 1296.8721243852133,
-        "std_dev_ns": 1.957734720740902
+        "mean_ns": 1300.510039469154,
+        "median_ns": 1300.2684321605152,
+        "std_dev_ns": 1.0321712795907
       },
       "event_build/make_room_message": {
-        "mean_ns": 21790.388870423678,
-        "median_ns": 21789.22308488613,
-        "std_dev_ns": 7.879336209332418
+        "mean_ns": 21723.94408281852,
+        "median_ns": 21721.48776899429,
+        "std_dev_ns": 9.883496762670868
       },
       "pool_query/get_by_id": {
-        "mean_ns": 32182.921920861587,
-        "median_ns": 32172.845358682665,
-        "std_dev_ns": 101.70650703575177
+        "mean_ns": 31969.018275216942,
+        "median_ns": 31944.128073098087,
+        "std_dev_ns": 140.88283989076606
       },
       "canonical/encode/large": {
-        "mean_ns": 6504.816506233858,
-        "median_ns": 6528.83387394105,
-        "std_dev_ns": 64.56431977663364
+        "mean_ns": 6081.576422785422,
+        "median_ns": 6080.2137901897295,
+        "std_dev_ns": 6.142329040530571
       },
       "pool_query/get_room_channel_1k": {
-        "mean_ns": 10491.05075923794,
-        "median_ns": 10490.75151366789,
-        "std_dev_ns": 6.520137268287234
+        "mean_ns": 10220.351210171015,
+        "median_ns": 10219.226030927835,
+        "std_dev_ns": 5.186320735214246
       },
       "event_build/make_node_meta": {
-        "mean_ns": 21521.27392079118,
-        "median_ns": 21519.340730409964,
-        "std_dev_ns": 9.850772312691067
+        "mean_ns": 21490.71204771845,
+        "median_ns": 21489.18429738395,
+        "std_dev_ns": 6.689775484491825
       },
       "pool_query/get_wanted_after_0": {
-        "mean_ns": 1461.6913929489613,
-        "median_ns": 1461.6456101256986,
-        "std_dev_ns": 1.2452170039162906
+        "mean_ns": 1471.0765731312217,
+        "median_ns": 1470.833595774432,
+        "std_dev_ns": 0.8761513701144575
       },
       "pool_query/get_wanted_after_tc": {
-        "mean_ns": 1476.5114038954698,
-        "median_ns": 1476.5420071753283,
-        "std_dev_ns": 1.5797564206316865
+        "mean_ns": 1353.513793440102,
+        "median_ns": 1353.4972333917585,
+        "std_dev_ns": 1.2155397437997513
       },
       "pool_write/put_batch_10": {
-        "mean_ns": 253310.00607892702,
-        "median_ns": 253305.66126047145,
-        "std_dev_ns": 237.1375070718391
+        "mean_ns": 252154.97480864453,
+        "median_ns": 252138.4760021097,
+        "std_dev_ns": 235.58733553011712
       },
       "crypto/ed25519_sign": {
-        "mean_ns": 20462.12452394895,
-        "median_ns": 20461.423386121718,
-        "std_dev_ns": 8.674414323334046
+        "mean_ns": 20419.925827247378,
+        "median_ns": 20417.08774167562,
+        "std_dev_ns": 9.480292219371828
       },
       "envelope_verify/verify_chain/depth1": {
-        "mean_ns": 41461.334546269776,
-        "median_ns": 41455.63297511313,
-        "std_dev_ns": 26.601717645082356
+        "mean_ns": 42882.72537179018,
+        "median_ns": 42879.87923779042,
+        "std_dev_ns": 15.49561949081169
       },
       "crypto/chacha20_encrypt": {
-        "mean_ns": 330.0018124717028,
-        "median_ns": 329.9850988235294,
-        "std_dev_ns": 0.14045454808992783
+        "mean_ns": 329.685034012593,
+        "median_ns": 329.6876477009633,
+        "std_dev_ns": 0.13405201213783646
       },
       "crypto/ed25519_generate": {
-        "mean_ns": 14557.183291209838,
-        "median_ns": 14555.00448585231,
-        "std_dev_ns": 15.382368050089688
+        "mean_ns": 14515.558420142264,
+        "median_ns": 14514.519418629952,
+        "std_dev_ns": 4.151039331427594
       },
       "canonical/encode/medium": {
-        "mean_ns": 1564.468610826287,
-        "median_ns": 1564.3811802511655,
-        "std_dev_ns": 0.7799308427230093
+        "mean_ns": 1515.5552655257673,
+        "median_ns": 1515.507022804952,
+        "std_dev_ns": 0.4864382693718901
       },
       "event_build/make_room_create": {
-        "mean_ns": 44295.631354350524,
-        "median_ns": 44295.76636155606,
-        "std_dev_ns": 16.62349621684602
+        "mean_ns": 44224.08356438152,
+        "median_ns": 44219.9494963847,
+        "std_dev_ns": 24.430056684062
       }
     }
   }
